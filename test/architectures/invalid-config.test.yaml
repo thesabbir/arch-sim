@@ -1,0 +1,60 @@
+# Invalid Configuration Test
+test:
+  name: 'Invalid Configuration Test'
+  description: 'Test validation of invalid architecture configurations'
+
+architecture:
+  name: 'Invalid Test Config'
+  description: 'Configuration with validation issues'
+
+  application:
+    language: 'python'
+    runtime: 'python'
+    framework: 'nonexistent_framework' # This should fail validation
+    version: '1.x'
+
+  databases:
+    primary:
+      type: 'postgresql'
+      provider: 'fake_provider' # This should fail validation
+      plan: 'free'
+
+  hosting:
+    backend:
+      provider: 'vercel' # Vercel doesn't support Python
+      service_type: 'web_service'
+      instance_type: 'starter'
+
+  load_profile:
+    concurrent_users: 50
+    requests_per_second: 25
+    data_size: '500mb'
+
+  performance_targets:
+    response_time_p95: 300
+    uptime_sla: 99.9
+    throughput_rps: 50
+
+  budget:
+    monthly_limit: 25
+    currency: 'usd'
+    alerts_at: 80
+
+# Test expectations - should fail validation
+expectations:
+  validation:
+    should_be_valid: false
+    max_issues: 10 # Allow multiple validation issues
+    max_warnings: 5
+
+  performance:
+    # Performance tests should not run due to validation failures
+    min_rps: 0
+
+  cost:
+    # Cost analysis may still work with fallback estimates
+    max_monthly_cost: 100
+
+  recommendations:
+    max_critical: 5 # Should have critical recommendations to fix issues
+    should_include_types: ['validation']

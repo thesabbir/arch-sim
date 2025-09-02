@@ -1,0 +1,84 @@
+# Basic Node.js Architecture Test
+test:
+  name: 'Basic Node.js API Test'
+  description: 'Test a simple Node.js API configuration'
+  author: 'Architecture Simulator'
+
+architecture:
+  name: 'Basic Node.js API'
+  description: 'Simple Node.js API for testing'
+
+  application:
+    language: 'javascript'
+    runtime: 'node.js'
+    framework: 'express'
+    version: '4.x'
+
+  databases:
+    primary:
+      type: 'postgresql'
+      provider: 'neon'
+      plan: 'free'
+      size: 'small'
+
+  hosting:
+    backend:
+      provider: 'render'
+      service_type: 'web_service'
+      instance_type: 'starter'
+      auto_scaling: false
+
+  services:
+    monitoring:
+      error_tracking:
+        provider: 'sentry'
+        plan: 'developer'
+
+  load_profile:
+    concurrent_users: 100
+    requests_per_second: 50
+    peak_multiplier: 2
+    data_size: '1gb'
+    read_write_ratio: '80:20'
+    geographic_distribution:
+      - region: 'us-east'
+        percentage: 100
+
+  performance_targets:
+    response_time_p95: 500
+    uptime_sla: 99.9
+    throughput_rps: 100
+
+  budget:
+    monthly_limit: 50
+    currency: 'usd'
+    alerts_at: 80
+    optimization_priority: 'cost'
+
+  development:
+    team_size: 1
+    deployment_frequency: 'weekly'
+    monitoring_level: 'basic'
+    compliance_requirements: []
+
+# Test expectations
+expectations:
+  validation:
+    should_be_valid: true
+    max_issues: 0
+    max_warnings: 2
+
+  performance:
+    min_rps: 1000 # Should easily exceed this with the simple load
+    max_response_time: 200 # Should achieve good response time
+    should_meet_targets: true
+
+  cost:
+    max_monthly_cost: 50
+    should_be_within_budget: true
+    max_budget_usage: 100
+
+  recommendations:
+    max_critical: 0
+    max_high: 2
+    should_include_types: [] # No specific types required for basic setup

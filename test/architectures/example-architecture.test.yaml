@@ -1,0 +1,103 @@
+# Example Architecture Configuration
+# E-commerce API with modern stack
+
+architecture:
+  name: 'E-commerce API'
+  description: 'Scalable e-commerce backend with microservices pattern'
+
+  # Core application stack
+  application:
+    language: 'typescript'
+    runtime: 'node.js'
+    framework: 'fastify'
+    version: '4.x'
+
+  # Frontend application
+  frontend:
+    framework: 'nextjs'
+    version: '14.x'
+    build_tool: 'vite'
+
+  # Database configuration
+  databases:
+    primary:
+      type: 'postgresql'
+      provider: 'neon'
+      plan: 'scale'
+      size: 'small'
+      features: ['branching', 'auto_scaling']
+    cache:
+      type: 'redis'
+      provider: 'upstash_redis'
+      plan: 'pay_as_you_go'
+
+  # Deployment platform
+  hosting:
+    backend:
+      provider: 'render'
+      service_type: 'web_service'
+      instance_type: 'starter'
+      auto_scaling: true
+    frontend:
+      provider: 'vercel'
+      service_type: 'static_site'
+      framework_preset: 'nextjs'
+
+  # External services
+  services:
+    authentication:
+      provider: 'clerk'
+      plan: 'pro'
+      features: ['social_logins', 'user_management']
+    monitoring:
+      error_tracking:
+        provider: 'sentry'
+        plan: 'developer'
+      uptime:
+        provider: 'uptimerobot'
+        plan: 'pro'
+    cdn:
+      provider: 'cloudflare'
+      plan: 'pro'
+      features: ['ddos_protection', 'waf']
+    email:
+      provider: 'resend'
+      plan: 'pro'
+    storage:
+      provider: 'cloudflare_r2'
+      plan: 'usage_based'
+
+  # Load configuration for simulation
+  load_profile:
+    concurrent_users: 1000
+    requests_per_second: 500
+    peak_multiplier: 3
+    data_size: '10gb'
+    read_write_ratio: '80:20'
+    geographic_distribution:
+      - region: 'us-east'
+        percentage: 60
+      - region: 'eu-west'
+        percentage: 30
+      - region: 'asia-pacific'
+        percentage: 10
+
+  # Performance requirements
+  performance_targets:
+    response_time_p95: 200 # milliseconds
+    uptime_sla: 99.9 # percentage
+    throughput_rps: 1000 # requests per second
+
+  # Cost constraints
+  budget:
+    monthly_limit: 500
+    currency: 'usd'
+    alerts_at: 80 # percentage
+    optimization_priority: 'cost' # or "performance"
+
+  # Development & Operations
+  development:
+    team_size: 3
+    deployment_frequency: 'daily'
+    monitoring_level: 'detailed'
+    compliance_requirements: []

@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    // Target modern Node.js
+    "target": "ES2022",
+    "module": "ESNext",
+    "lib": ["ES2022"],
+
+    // Node.js module resolution
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+
+    // Output
+    "outDir": "./dist",
+    "rootDir": "./src",
+
+    // Type checking
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+
+    // Additional checks
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+
+    // Emit
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "removeComments": false,
+
+    // Interop
+    "allowJs": true,
+    "checkJs": false,
+
+    // Skip lib check for faster builds
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "test", "**/*.test.ts", "**/*.spec.ts"]
+}

@@ -1,0 +1,1007 @@
+# Generated Platform Ecosystem for Architecture Simulator
+# Generated on: 2025-09-01T10:29:42.704Z
+# 
+# This file contains all supported platforms, services, languages, and frameworks
+# for the architecture simulator tool.
+#
+
+platform_ecosystem:
+  version: 1.0.0
+  last_updated: '2025-09-01'
+  languages:
+    backend:
+      - id: javascript
+        name: JavaScript
+        runtime: node.js
+        performance_tier: medium
+        memory_usage: medium
+      - id: typescript
+        name: TypeScript
+        runtime: node.js
+        performance_tier: medium
+        memory_usage: medium
+      - id: python
+        name: Python
+        runtime: python
+        performance_tier: medium
+        memory_usage: high
+      - id: go
+        name: Go
+        runtime: go
+        performance_tier: high
+        memory_usage: low
+      - id: rust
+        name: Rust
+        runtime: rust
+        performance_tier: very_high
+        memory_usage: very_low
+      - id: java
+        name: Java
+        runtime: jvm
+        performance_tier: high
+        memory_usage: high
+      - id: csharp
+        name: C#
+        runtime: dotnet
+        performance_tier: high
+        memory_usage: medium
+      - id: php
+        name: PHP
+        runtime: php
+        performance_tier: medium
+        memory_usage: medium
+      - id: ruby
+        name: Ruby
+        runtime: ruby
+        performance_tier: medium
+        memory_usage: medium
+      - id: elixir
+        name: Elixir
+        runtime: beam
+        performance_tier: high
+        memory_usage: medium
+    frontend:
+      - id: javascript
+        name: JavaScript
+        type: interpreted
+      - id: typescript
+        name: TypeScript
+        type: compiled
+      - id: dart
+        name: Dart
+        type: compiled
+      - id: elm
+        name: Elm
+        type: compiled
+  frameworks:
+    nodejs:
+      - id: express
+        name: Express.js
+        language: javascript
+        performance_tier: medium
+        complexity: low
+        learning_curve: easy
+      - id: fastify
+        name: Fastify
+        language: javascript
+        performance_tier: high
+        complexity: low
+        learning_curve: easy
+      - id: nestjs
+        name: NestJS
+        language: typescript
+        performance_tier: medium
+        complexity: high
+        learning_curve: steep
+      - id: koa
+        name: Koa.js
+        language: javascript
+        performance_tier: medium
+        complexity: medium
+        learning_curve: medium
+      - id: hapi
+        name: Hapi.js
+        language: javascript
+        performance_tier: medium
+        complexity: high
+        learning_curve: medium
+      - id: adonis
+        name: AdonisJS
+        language: javascript
+        performance_tier: medium
+        complexity: high
+        learning_curve: medium
+    python:
+      - id: fastapi
+        name: FastAPI
+        language: python
+        performance_tier: high
+        complexity: medium
+        learning_curve: easy
+      - id: django
+        name: Django
+        language: python
+        performance_tier: medium
+        complexity: high
+        learning_curve: medium
+      - id: flask
+        name: Flask
+        language: python
+        performance_tier: medium
+        complexity: low
+        learning_curve: easy
+      - id: starlette
+        name: Starlette
+        language: python
+        performance_tier: high
+        complexity: low
+        learning_curve: medium
+    go:
+      - id: gin
+        name: Gin
+        language: go
+        performance_tier: very_high
+        complexity: low
+        learning_curve: easy
+      - id: echo
+        name: Echo
+        language: go
+        performance_tier: very_high
+        complexity: low
+        learning_curve: easy
+      - id: fiber
+        name: Fiber
+        language: go
+        performance_tier: very_high
+        complexity: low
+        learning_curve: easy
+    rust:
+      - id: axum
+        name: Axum
+        language: rust
+        performance_tier: very_high
+        complexity: medium
+        learning_curve: steep
+      - id: actix_web
+        name: Actix Web
+        language: rust
+        performance_tier: very_high
+        complexity: medium
+        learning_curve: steep
+  frontend_frameworks:
+    react:
+      - id: react
+        name: React
+        type: library
+        performance_tier: high
+        bundle_size: medium
+        learning_curve: medium
+      - id: nextjs
+        name: Next.js
+        type: framework
+        performance_tier: high
+        bundle_size: medium
+        learning_curve: medium
+        features:
+          - ssr
+          - ssg
+          - api_routes
+      - id: gatsby
+        name: Gatsby
+        type: ssg
+        performance_tier: very_high
+        bundle_size: medium
+        learning_curve: medium
+    vue:
+      - id: vue
+        name: Vue.js
+        type: framework
+        performance_tier: high
+        bundle_size: small
+        learning_curve: easy
+      - id: nuxtjs
+        name: Nuxt.js
+        type: framework
+        performance_tier: high
+        bundle_size: medium
+        learning_curve: medium
+        features:
+          - ssr
+          - ssg
+          - spa
+    other:
+      - id: svelte
+        name: Svelte
+        type: compiler
+        performance_tier: very_high
+        bundle_size: very_small
+        learning_curve: easy
+      - id: sveltekit
+        name: SvelteKit
+        type: framework
+        performance_tier: very_high
+        bundle_size: small
+        learning_curve: easy
+      - id: angular
+        name: Angular
+        type: framework
+        performance_tier: high
+        bundle_size: large
+        learning_curve: steep
+  hosting_platforms:
+    developer_first:
+      - id: vercel
+        name: Vercel
+        type: paas
+        supported_languages:
+          - javascript
+          - typescript
+          - python
+          - go
+        specialties:
+          - nextjs
+          - static_sites
+          - serverless
+        pricing_model: usage_based
+        free_tier: true
+        performance_tier: high
+        global_cdn: true
+        auto_scaling: true
+      - id: netlify
+        name: Netlify
+        type: paas
+        supported_languages:
+          - javascript
+          - typescript
+          - go
+        specialties:
+          - jamstack
+          - static_sites
+          - serverless
+        pricing_model: usage_based
+        free_tier: true
+        performance_tier: high
+        global_cdn: true
+        auto_scaling: true
+      - id: render
+        name: Render
+        type: paas
+        supported_languages:
+          - javascript
+          - python
+          - go
+          - rust
+          - ruby
+          - php
+        specialties:
+          - full_stack
+          - databases
+          - static_sites
+        pricing_model: instance_based
+        free_tier: true
+        performance_tier: medium
+        auto_scaling: true
+      - id: railway
+        name: Railway
+        type: paas
+        supported_languages:
+          - javascript
+          - python
+          - go
+          - rust
+          - java
+          - php
+        specialties:
+          - git_based
+          - databases
+          - full_stack
+        pricing_model: usage_based
+        free_tier: true
+        performance_tier: medium
+        auto_scaling: true
+      - id: flyio
+        name: Fly.io
+        type: paas
+        supported_languages:
+          - javascript
+          - python
+          - go
+          - rust
+          - elixir
+          - ruby
+        specialties:
+          - edge_deployment
+          - global_distribution
+        pricing_model: usage_based
+        free_tier: true
+        performance_tier: high
+        global_deployment: true
+        auto_scaling: true
+    big_cloud_dx:
+      - id: aws_app_runner
+        name: AWS App Runner
+        type: paas
+        supported_languages:
+          - javascript
+          - python
+          - go
+          - java
+          - ruby
+        specialties:
+          - containers
+          - auto_scaling
+        pricing_model: usage_based
+        free_tier: false
+        performance_tier: high
+        auto_scaling: true
+      - id: firebase
+        name: Firebase
+        type: baas
+        supported_languages:
+          - javascript
+          - typescript
+          - dart
+        specialties:
+          - real_time
+          - auth
+          - database
+        pricing_model: usage_based
+        free_tier: true
+        performance_tier: high
+        auto_scaling: true
+  databases:
+    sql:
+      - id: neon
+        name: Neon
+        type: postgresql
+        pricing_model: usage_based
+        features:
+          - serverless
+          - branching
+          - auto_scaling
+        free_tier: true
+        performance_tier: high
+        global_availability: true
+      - id: planetscale
+        name: PlanetScale
+        type: mysql
+        pricing_model: usage_based
+        features:
+          - serverless
+          - branching
+          - schema_changes
+        free_tier: true
+        performance_tier: high
+        global_availability: true
+      - id: supabase
+        name: Supabase
+        type: postgresql
+        pricing_model: usage_based
+        features:
+          - real_time
+          - auth
+          - storage
+          - edge_functions
+        free_tier: true
+        performance_tier: high
+        additional_services:
+          - auth
+          - storage
+          - functions
+    nosql:
+      - id: mongodb_atlas
+        name: MongoDB Atlas
+        type: document
+        pricing_model: instance_based
+        features:
+          - managed
+          - global_clusters
+          - search
+        free_tier: true
+        performance_tier: high
+        global_availability: true
+      - id: fauna
+        name: Fauna
+        type: document
+        pricing_model: usage_based
+        features:
+          - serverless
+          - acid_transactions
+          - global
+        free_tier: true
+        performance_tier: high
+        global_availability: true
+  caching:
+    redis:
+      - id: upstash_redis
+        name: Upstash Redis
+        type: redis
+        pricing_model: per_request
+        features:
+          - serverless
+          - global_replication
+          - rest_api
+        free_tier: true
+        performance_tier: high
+        global_availability: true
+      - id: redis_cloud
+        name: Redis Cloud
+        type: redis
+        pricing_model: instance_based
+        features:
+          - managed
+          - modules
+          - clustering
+        free_tier: true
+        performance_tier: very_high
+        global_availability: true
+  cdn_services: []
+  monitoring:
+    error_tracking:
+      - id: sentry
+        name: Sentry
+        type: error_tracking
+        features:
+          - performance_monitoring
+          - release_tracking
+          - alerts
+        pricing_model: event_based
+        free_tier: true
+        supported_languages:
+          - javascript
+          - python
+          - go
+          - java
+          - rust
+          - php
+      - id: rollbar
+        name: Rollbar
+        type: error_tracking
+        features:
+          - real_time_errors
+          - deploy_tracking
+          - rql
+        pricing_model: event_based
+        free_tier: true
+        supported_languages:
+          - javascript
+          - python
+          - go
+          - java
+          - ruby
+          - php
+    uptime:
+      - id: uptimerobot
+        name: UptimeRobot
+        type: uptime_monitoring
+        features:
+          - website_monitoring
+          - keyword_monitoring
+          - status_pages
+        pricing_model: tiered
+        free_tier: true
+        check_locations: 10+
+  authentication:
+    - id: clerk
+      name: Clerk
+      type: auth_platform
+      features:
+        - user_management
+        - social_logins
+        - webhooks
+      pricing_model: mau_based
+      free_tier: true
+      supported_frameworks:
+        - react
+        - nextjs
+        - vue
+        - svelte
+    - id: auth0
+      name: Auth0
+      type: identity_platform
+      features:
+        - sso
+        - mfa
+        - user_management
+        - rules
+      pricing_model: mau_based
+      free_tier: true
+      enterprise_features: true
+  communication: {}
+  storage: {}
+  search: []
+  analytics: []
+performance_benchmarks:
+  languages:
+    javascript:
+      requests_per_second: 15000
+      memory_usage_mb: 50
+      cold_start_ms: 100
+    typescript:
+      requests_per_second: 15000
+      memory_usage_mb: 50
+      cold_start_ms: 100
+    python:
+      requests_per_second: 8000
+      memory_usage_mb: 80
+      cold_start_ms: 200
+    go:
+      requests_per_second: 45000
+      memory_usage_mb: 25
+      cold_start_ms: 50
+    rust:
+      requests_per_second: 55000
+      memory_usage_mb: 20
+      cold_start_ms: 30
+  frameworks:
+    fastify:
+      requests_per_second: 18000
+      overhead_factor: 1.2
+    express:
+      requests_per_second: 12000
+      overhead_factor: 1.8
+    fastapi:
+      requests_per_second: 12000
+      overhead_factor: 1.5
+    gin:
+      requests_per_second: 50000
+      overhead_factor: 1.1
+pricing:
+  hosting:
+    vercel:
+      hobby:
+        name: Hobby
+        price_per_month: 0
+        features:
+          domains: unlimited
+          bandwidth: 100gb
+          function_invocations: 1000000
+          function_execution_time: 100gb_hours
+          build_execution_time: 6000_minutes
+          serverless_functions: true
+          edge_functions: true
+          team_members: 1
+        limitations:
+          commercial_usage: false
+          password_protection: false
+          analytics: basic
+      pro:
+        name: Pro
+        price_per_month: 20
+        features:
+          domains: unlimited
+          bandwidth: 1000gb
+          function_invocations: 10000000
+          function_execution_time: 1000gb_hours
+          build_execution_time: unlimited
+          team_members: 10
+          password_protection: true
+          analytics: advanced
+          preview_deployments: unlimited
+        overages:
+          bandwidth_per_gb: 0.4
+          function_invocations_per_million: 2
+          function_execution_per_gb_hour: 0.18
+          additional_team_member: 20
+      enterprise:
+        name: Enterprise
+        price_per_month: custom
+        features:
+          everything_in_pro: true
+          sso: true
+          advanced_security: true
+          dedicated_support: true
+          sla: 99.99%
+    render:
+      free:
+        name: Free
+        price_per_month: 0
+        features:
+          web_services: 750_hours
+          bandwidth: 100gb
+          build_minutes: 500_minutes
+          databases: 1
+          memory: 512mb
+          cpu: 0.1_cpu
+          sleep_after_inactivity: 15_minutes
+      starter:
+        name: Starter
+        price_per_month: 7
+        features:
+          memory: 512mb
+          cpu: 0.5_cpu
+          bandwidth: unlimited
+          no_sleep: true
+          custom_domains: true
+          ssl_certificates: true
+      standard:
+        name: Standard
+        price_per_month: 25
+        features:
+          memory: 2gb
+          cpu: 1_cpu
+          bandwidth: unlimited
+          background_workers: true
+          private_services: true
+      pro:
+        name: Pro
+        price_per_month: 85
+        features:
+          memory: 8gb
+          cpu: 2_cpu
+          bandwidth: unlimited
+          horizontal_scaling: true
+          advanced_metrics: true
+    railway:
+      trial:
+        name: Trial
+        price_per_month: 0
+        credits: 5
+        features:
+          usage_based: true
+          credit_system: true
+          trial_period: 30_days
+      developer:
+        name: Developer
+        price_per_month: 20
+        credits: 20
+        features:
+          usage_based: true
+          priority_support: true
+          custom_domains: true
+          environment_variables: unlimited
+        usage_rates:
+          cpu_per_vcpu_hour: 0.000463
+          memory_per_gb_hour: 0.000231
+          disk_per_gb_hour: 0.000025
+          network_egress_per_gb: 0.1
+      team:
+        name: Team
+        price_per_month: 100
+        credits: 100
+        features:
+          everything_in_developer: true
+          team_management: true
+          audit_logs: true
+          priority_support: true
+    flyio:
+      free_allowances:
+        name: Free Allowances
+        included:
+          cpu: 2340_cpu_hours
+          memory: 160gb_hours
+          disk: 3gb_persistent
+          bandwidth: 160gb_outbound
+      pay_as_you_go:
+        name: Pay-as-you-go
+        rates:
+          cpu_shared_per_hour: 0.0000021
+          cpu_dedicated_per_hour: 0.02
+          memory_per_gb_hour: 0.0000015
+          disk_per_gb_month: 0.15
+          bandwidth_per_gb: 0.02
+          ipv4_address_per_month: 2
+        minimums:
+          shared_cpu_1x: 256mb
+          performance_1x: 2gb
+  databases:
+    neon:
+      free:
+        name: Free
+        price_per_month: 0
+        limits:
+          storage: 3gb
+          compute_hours: 191.5
+          databases: 10
+          branches: 10
+          projects: 1
+          compute_size: 0.25_vcpu
+      launch:
+        name: Launch
+        price_per_month: 19
+        includes:
+          storage: 10gb
+          compute_hours: 300
+          projects: 10
+          branches: 50
+          databases: unlimited
+        usage_rates:
+          storage_per_gb: 0.15
+          compute_per_hour_025vcpu: 0.16
+          compute_per_hour_05vcpu: 0.24
+          compute_per_hour_1vcpu: 0.48
+          compute_per_hour_2vcpu: 0.96
+          compute_per_hour_4vcpu: 1.92
+      scale:
+        name: Scale
+        price_per_month: 69
+        includes:
+          storage: 50gb
+          compute_hours: 750
+          projects: 100
+          branches: 500
+          read_replicas: true
+          connection_pooling: true
+        usage_rates:
+          storage_per_gb: 0.15
+          compute_per_hour_025vcpu: 0.16
+          compute_per_hour_8vcpu: 3.84
+    planetscale:
+      hobby:
+        name: Hobby
+        price_per_month: 0
+        limits:
+          storage: 5gb
+          row_reads_per_month: 1000000000
+          row_writes_per_month: 10000000
+          databases: 1
+          branches: 1
+          connection_pooling: false
+      scaler:
+        name: Scaler
+        price_per_month: 29
+        includes:
+          storage: 10gb
+          row_reads_per_month: 10000000000
+          row_writes_per_month: 50000000
+          databases: 5
+          branches: 10
+          connection_pooling: true
+          query_insights: true
+        overages:
+          storage_per_gb: 1.25
+          reads_per_billion: 1
+          writes_per_million: 1.5
+      enterprise:
+        name: Enterprise
+        price_per_month: custom
+        features:
+          everything_in_scaler: true
+          sso: true
+          audit_logs: true
+          advanced_security: true
+    supabase:
+      free:
+        name: Free
+        price_per_month: 0
+        includes:
+          database_space: 500mb
+          auth_users: 50000
+          storage: 1gb
+          bandwidth: 2gb
+          edge_functions_invocations: 500000
+          realtime_connections: 200
+          email_auth: true
+        limitations:
+          projects: 2
+          pauses_after_inactivity: 1_week
+      pro:
+        name: Pro
+        price_per_month: 25
+        includes:
+          database_space: 8gb
+          auth_users: 100000
+          storage: 100gb
+          bandwidth: 50gb
+          edge_functions_invocations: 2000000
+          realtime_connections: 500
+          daily_backups: 7
+          point_in_time_recovery: true
+        overages:
+          database_per_gb: 0.125
+          auth_users_per_1k: 0.00325
+          storage_per_gb: 0.021
+          bandwidth_per_gb: 0.09
+          edge_functions_per_million: 2
+  caching:
+    upstash_redis:
+      free:
+        name: Free
+        price_per_month: 0
+        includes:
+          max_requests_per_day: 10000
+          max_data_size: 256mb
+          max_databases: 1
+          tls: true
+          rest_api: true
+      pay_as_you_go:
+        name: Pay-as-you-go
+        rates:
+          requests_per_100k: 0.2
+          storage_per_gb_month: 0.25
+          bandwidth_per_gb: 0.4
+        features:
+          global_database: true
+          edge_caching: true
+          rest_api: true
+          redis_compatible: true
+    redis_cloud:
+      free:
+        name: Free
+        price_per_month: 0
+        includes:
+          memory: 30mb
+          connections: 30
+          ops_per_second: 10000
+          data_persistence: false
+          replication: false
+      fixed_plans:
+        - name: 250MB
+          price_per_month: 7
+          memory: 250mb
+          connections: 256
+          ops_per_second: 25000
+          data_persistence: true
+        - name: 1GB
+          price_per_month: 15
+          memory: 1gb
+          connections: 256
+          ops_per_second: 25000
+          data_persistence: true
+          replication: true
+        - name: 2.5GB
+          price_per_month: 35
+          memory: 2.5gb
+          connections: 512
+          ops_per_second: 25000
+          multi_zone: true
+      flexible:
+        name: Flexible Plans
+        starting_at: 56
+        rates:
+          memory_per_gb: 0.067
+          throughput_per_ops: 0.00006
+  monitoring:
+    sentry:
+      developer:
+        name: Developer
+        price_per_month: 0
+        includes:
+          errors: 5000
+          performance_transactions: 10000
+          replays: 50
+          cron_monitors: 10
+          team_members: 1
+          data_retention: 30_days
+      team:
+        name: Team
+        price_per_month: 26
+        includes:
+          errors: 50000
+          performance_transactions: 100000
+          replays: 500
+          cron_monitors: 100
+          team_members: unlimited
+          data_retention: 90_days
+          email_support: true
+        overages:
+          errors_per_1k: 0.045
+          performance_per_1k: 0.0045
+          replays_per_1k: 4.5
+      organization:
+        name: Organization
+        price_per_month: 80
+        includes:
+          errors: 200000
+          performance_transactions: 1000000
+          replays: 5000
+          advanced_features: true
+          sso: true
+          priority_support: true
+  authentication:
+    auth0:
+      free:
+        name: Free
+        price_per_month: 0
+        includes:
+          monthly_active_users: 7500
+          social_connections: unlimited
+          username_password: true
+          passwordless: true
+          multifactor_auth: true
+        limitations:
+          advanced_features: false
+          customize_emails: false
+          remove_branding: false
+      essentials:
+        name: Essentials
+        price_per_mau: 0.0175
+        minimum_monthly: 35
+        includes:
+          everything_in_free: true
+          remove_branding: true
+          custom_emails: true
+          advanced_security: true
+          phone_support: true
+      professional:
+        name: Professional
+        price_per_mau: 0.028
+        minimum_monthly: 240
+        includes:
+          everything_in_essentials: true
+          advanced_mfa: true
+          breached_password_detection: true
+          organizations: true
+          machine_to_machine: 1000
+    clerk:
+      free:
+        name: Free
+        price_per_month: 0
+        includes:
+          monthly_active_users: 10000
+          social_connections: unlimited
+          email_password: true
+          phone_auth: true
+          organizations: 3
+          webhooks: true
+      pro:
+        name: Pro
+        price_per_month: 25
+        includes:
+          monthly_active_users: 10000
+          organizations: unlimited
+          advanced_security: true
+          remove_branding: true
+          priority_support: true
+          audit_logs: true
+        overages:
+          mau_per_1k_over_10k: 0.02
+      enterprise:
+        name: Enterprise
+        price_per_month: custom
+        features:
+          sso: true
+          scim: true
+          advanced_security: true
+          dedicated_support: true
+          sla: true
+  communication: {}
+  storage: {}
+  cdn:
+    cloudflare:
+      free:
+        name: Free
+        price_per_month: 0
+        includes:
+          bandwidth: unlimited
+          requests: unlimited
+          ssl_certificates: shared
+          ddos_protection: basic
+          cdn: true
+          dns: true
+        limitations:
+          page_rules: 3
+          workers: 100000
+          kv_operations: 100000
+      pro:
+        name: Pro
+        price_per_month: 20
+        includes:
+          everything_in_free: true
+          waf: true
+          page_rules: 20
+          image_optimization: true
+          mobile_optimization: true
+          polish: true
+      business:
+        name: Business
+        price_per_month: 200
+        includes:
+          everything_in_pro: true
+          advanced_ddos: true
+          page_rules: 50
+          load_balancing: true
+          advanced_security: true
+          priority_support: true
+      workers:
+        name: Workers
+        free_tier:
+          requests_per_day: 100000
+          cpu_time_per_request: 10ms
+        bundled:
+          price_per_month: 5
+          requests_included: 10000000
+          cpu_time_per_request: 50ms
+          overages:
+            requests_per_million: 0.5
+            duration_per_gb_second: 12.5

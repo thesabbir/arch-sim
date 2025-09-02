@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  quality-checks:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        task:
+          - name: lint
+            command: pnpm lint
+          - name: typecheck
+            command: pnpm typecheck
+          - name: test
+            command: pnpm test
+          - name: build
+            command: pnpm build
+
+    name: ${{ matrix.task.name }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run ${{ matrix.task.name }}
+        run: ${{ matrix.task.command }}

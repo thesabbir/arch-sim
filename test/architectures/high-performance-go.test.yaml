@@ -1,0 +1,89 @@
+# High Performance Go Architecture Test
+test:
+  name: 'High Performance Go API Test'
+  description: 'Test a high-performance Go microservice configuration'
+
+architecture:
+  name: 'Go Microservice API'
+  description: 'High-performance Go API with caching'
+
+  application:
+    language: 'go'
+    runtime: 'go'
+    framework: 'gin'
+    version: '1.9.x'
+
+  databases:
+    primary:
+      type: 'postgresql'
+      provider: 'planetscale'
+      plan: 'scale'
+      size: 'medium'
+    cache:
+      type: 'redis'
+      provider: 'upstash_redis'
+      plan: 'pay_as_you_go'
+
+  hosting:
+    backend:
+      provider: 'flyio'
+      service_type: 'microservice'
+      instance_type: 'shared_cpu_1x'
+      auto_scaling: true
+
+  services:
+    monitoring:
+      error_tracking:
+        provider: 'sentry'
+        plan: 'developer'
+    cdn:
+      provider: 'cloudflare'
+      plan: 'pro'
+      features: ['ddos_protection', 'waf']
+
+  load_profile:
+    concurrent_users: 2000
+    requests_per_second: 5000
+    peak_multiplier: 3
+    data_size: '10gb'
+    read_write_ratio: '90:10'
+    geographic_distribution:
+      - region: 'us-east'
+        percentage: 40
+      - region: 'eu-west'
+        percentage: 35
+      - region: 'asia-pacific'
+        percentage: 25
+
+  performance_targets:
+    response_time_p95: 100
+    uptime_sla: 99.95
+    throughput_rps: 4000
+
+  budget:
+    monthly_limit: 300
+    currency: 'usd'
+    alerts_at: 80
+    optimization_priority: 'performance'
+
+# Test expectations
+expectations:
+  validation:
+    should_be_valid: true
+    max_issues: 0
+    max_warnings: 1
+
+  performance:
+    min_rps: 10000 # Go should handle high performance
+    max_response_time: 150 # With caching should be fast
+    should_meet_targets: true
+
+  cost:
+    max_monthly_cost: 400 # Allow some overage for high performance
+    should_be_within_budget: false # Expect this to be over budget
+    max_budget_usage: 150
+
+  recommendations:
+    max_critical: 1 # May suggest cost optimization
+    max_high: 3
+    should_include_types: ['cost'] # Should recommend cost optimization

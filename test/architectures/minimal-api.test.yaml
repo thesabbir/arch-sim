@@ -1,0 +1,77 @@
+# Minimal API Test
+test:
+  name: 'Minimal REST API Test'
+  description: 'Test a minimal API setup with no database'
+  author: 'Architecture Simulator'
+
+architecture:
+  name: 'Minimal API'
+  description: 'Lightweight REST API without persistent storage'
+
+  application:
+    language: 'go'
+    runtime: 'go'
+    framework: 'gin'
+    version: '1.x'
+
+  databases:
+    # No database - in-memory only
+
+  hosting:
+    backend:
+      provider: 'fly.io'
+      service_type: 'web_service'
+      instance_type: 'shared-cpu-1x'
+      auto_scaling: false
+
+  services:
+    # Minimal services
+
+  load_profile:
+    concurrent_users: 50
+    requests_per_second: 25
+    peak_multiplier: 2
+    data_size: '10mb'
+    read_write_ratio: '90:10'
+    geographic_distribution:
+      - region: 'us-central'
+        percentage: 100
+
+  performance_targets:
+    response_time_p95: 50
+    uptime_sla: 99.0
+    throughput_rps: 100
+
+  budget:
+    monthly_limit: 10
+    currency: 'usd'
+    alerts_at: 80
+    optimization_priority: 'cost'
+
+  development:
+    team_size: 1
+    deployment_frequency: 'monthly'
+    monitoring_level: 'basic'
+    compliance_requirements: []
+
+# Test expectations
+expectations:
+  validation:
+    should_be_valid: true
+    max_issues: 0
+    max_warnings: 1
+
+  performance:
+    min_rps: 1500
+    max_response_time: 30
+    should_meet_targets: true
+
+  cost:
+    max_monthly_cost: 10
+    should_be_within_budget: true
+    max_budget_usage: 80
+
+  recommendations:
+    max_critical: 0
+    max_high: 1
+    should_include_types: []

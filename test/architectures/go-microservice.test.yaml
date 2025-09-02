@@ -1,0 +1,87 @@
+# Go Microservice Architecture
+# High-performance microservice with Go
+
+architecture:
+  name: 'Go Microservice API'
+  description: 'High-performance microservice architecture with Go'
+
+  # Core application stack
+  application:
+    language: 'go'
+    runtime: 'go'
+    framework: 'gin'
+    version: '1.9.x'
+
+  # No separate frontend - API only
+  frontend: null
+
+  # Database configuration
+  databases:
+    primary:
+      type: 'postgresql'
+      provider: 'planetscale'
+      plan: 'scale'
+      size: 'medium'
+      features: ['branching', 'schema_changes']
+    cache:
+      type: 'redis'
+      provider: 'redis_cloud'
+      plan: 'fixed'
+
+  # Deployment platform
+  hosting:
+    backend:
+      provider: 'flyio'
+      service_type: 'microservice'
+      instance_type: 'shared_cpu_1x'
+      auto_scaling: true
+      regions: ['global']
+
+  # External services
+  services:
+    monitoring:
+      error_tracking:
+        provider: 'sentry'
+        plan: 'developer'
+      uptime:
+        provider: 'uptimerobot'
+        plan: 'free'
+    cdn:
+      provider: 'cloudflare'
+      plan: 'free'
+      features: ['basic_cdn']
+
+  # Load configuration for simulation
+  load_profile:
+    concurrent_users: 2000
+    requests_per_second: 5000
+    peak_multiplier: 2
+    data_size: '5gb'
+    read_write_ratio: '90:10'
+    geographic_distribution:
+      - region: 'us-east'
+        percentage: 40
+      - region: 'eu-west'
+        percentage: 35
+      - region: 'asia-pacific'
+        percentage: 25
+
+  # Performance requirements
+  performance_targets:
+    response_time_p95: 50 # milliseconds
+    uptime_sla: 99.95 # percentage
+    throughput_rps: 3000 # requests per second
+
+  # Cost constraints
+  budget:
+    monthly_limit: 200
+    currency: 'usd'
+    alerts_at: 75 # percentage
+    optimization_priority: 'performance'
+
+  # Development & Operations
+  development:
+    team_size: 2
+    deployment_frequency: 'multiple_daily'
+    monitoring_level: 'basic'
+    compliance_requirements: []

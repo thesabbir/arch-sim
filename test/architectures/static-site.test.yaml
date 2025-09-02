@@ -1,0 +1,91 @@
+# Static Site Deployment Test
+test:
+  name: 'Static Site CDN Test'
+  description: 'Test a static site with CDN deployment'
+  author: 'Architecture Simulator'
+
+architecture:
+  name: 'Static Marketing Site'
+  description: 'Static site with global CDN distribution'
+
+  application:
+    language: 'javascript'
+    runtime: 'static'
+    framework: 'nextjs'
+    version: '14.x'
+
+  databases:
+    # No database needed for static site
+
+  hosting:
+    frontend:
+      provider: 'vercel'
+      service_type: 'static_site'
+      instance_type: 'hobby'
+      auto_scaling: true
+
+    cdn:
+      provider: 'cloudflare'
+      plan: 'free'
+      regions: ['global']
+
+  services:
+    monitoring:
+      analytics:
+        provider: 'vercel'
+        plan: 'free'
+
+  load_profile:
+    concurrent_users: 1000
+    requests_per_second: 500
+    peak_multiplier: 5
+    data_size: '100mb'
+    read_write_ratio: '100:0'
+    geographic_distribution:
+      - region: 'us-east'
+        percentage: 30
+      - region: 'us-west'
+        percentage: 20
+      - region: 'eu-west'
+        percentage: 25
+      - region: 'asia-pacific'
+        percentage: 25
+
+  performance_targets:
+    response_time_p95: 100
+    uptime_sla: 99.99
+    throughput_rps: 1000
+
+  budget:
+    monthly_limit: 20
+    currency: 'usd'
+    alerts_at: 90
+    optimization_priority: 'performance'
+
+  development:
+    team_size: 1
+    deployment_frequency: 'continuous'
+    monitoring_level: 'basic'
+    compliance_requirements: []
+
+# Test expectations
+expectations:
+  validation:
+    should_be_valid: true
+    max_issues: 0
+    max_warnings: 1
+
+  performance:
+    min_rps: 5000
+    max_response_time: 50
+    should_meet_targets: true
+
+  cost:
+    max_monthly_cost: 20
+    should_be_within_budget: true
+    max_budget_usage: 50
+
+  recommendations:
+    max_critical: 0
+    max_high: 1
+    should_include_types: []

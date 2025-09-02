@@ -1,0 +1,106 @@
+# Budget Exceeded Test
+test:
+  name: 'Budget Exceeded Test'
+  description: 'Test architecture that exceeds budget constraints'
+
+architecture:
+  name: 'Expensive Architecture'
+  description: 'High-cost architecture for budget testing'
+
+  application:
+    language: 'typescript'
+    runtime: 'node.js'
+    framework: 'nestjs'
+    version: '10.x'
+
+  databases:
+    primary:
+      type: 'postgresql'
+      provider: 'supabase'
+      plan: 'pro'
+      size: 'large'
+    cache:
+      type: 'redis'
+      provider: 'redis_cloud'
+      plan: 'fixed'
+
+  hosting:
+    backend:
+      provider: 'render'
+      service_type: 'web_service'
+      instance_type: 'pro'
+      auto_scaling: true
+    frontend:
+      provider: 'vercel'
+      service_type: 'static_site'
+      instance_type: 'pro'
+
+  services:
+    authentication:
+      provider: 'auth0'
+      plan: 'pro'
+    monitoring:
+      error_tracking:
+        provider: 'sentry'
+        plan: 'pro'
+      uptime:
+        provider: 'pingdom'
+        plan: 'pro'
+    cdn:
+      provider: 'cloudflare'
+      plan: 'business'
+    email:
+      provider: 'sendgrid'
+      plan: 'pro'
+    storage:
+      provider: 'aws_s3'
+      plan: 'standard'
+
+  load_profile:
+    concurrent_users: 5000
+    requests_per_second: 2000
+    peak_multiplier: 4
+    data_size: '50gb'
+    read_write_ratio: '70:30'
+    geographic_distribution:
+      - region: 'us-east'
+        percentage: 30
+      - region: 'us-west'
+        percentage: 20
+      - region: 'eu-west'
+        percentage: 30
+      - region: 'asia-pacific'
+        percentage: 20
+
+  performance_targets:
+    response_time_p95: 150
+    uptime_sla: 99.99
+    throughput_rps: 1800
+
+  budget:
+    monthly_limit: 200 # Intentionally low budget
+    currency: 'usd'
+    alerts_at: 75
+    optimization_priority: 'cost'
+
+# Test expectations - should exceed budget
+expectations:
+  validation:
+    should_be_valid: true
+    max_issues: 0
+    max_warnings: 3
+
+  performance:
+    min_rps: 5000
+    max_response_time: 200
+    should_meet_targets: true
+
+  cost:
+    max_monthly_cost: 1000 # Allow high costs
+    should_be_within_budget: false # Should exceed budget
+    max_budget_usage: 500 # Allow 500% over budget
+
+  recommendations:
+    max_critical: 2 # Should have critical cost recommendations
+    max_high: 5
+    should_include_types: ['cost', 'optimization'] # Should recommend cost optimization
