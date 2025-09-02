@@ -37,10 +37,9 @@ $ arch-sim simulate api.yaml --load black-friday
 
 ### 1. Install the tool
 
-```bash
-pnpm install -g architecture-simulator
-# or with npm: npm install -g architecture-simulator
-```
+🚧 **Work in Progress** - Will be published soon! 
+
+For now, clone the repository and run locally:
 
 ### 2. Create your first architecture file
 
@@ -284,47 +283,9 @@ The tool uses:
 - Queueing theory (math that predicts wait times and bottlenecks)
 - Monte Carlo simulations (running thousands of "what if" scenarios)
 
-## Common Questions from Junior Engineers
-
-**Q: Do I need to know cloud architecture to use this?**
-A: No! Start with the examples and modify them. The tool will guide you.
-
-**Q: How accurate are the cost predictions?**
-A: Within 5-10% of actual bills based on our testing with real production systems.
-
-**Q: Can I use this for my personal projects?**
-A: Yes! It's especially useful for avoiding surprise cloud bills on side projects.
-
-**Q: What if my stack isn't supported?**
-A: Open an issue! We add new services based on user requests.
-
-## Getting Help
-
-- 📖 **Beginner Tutorial**: Run `arch-sim tutorial` for an interactive guide
-- 💬 **Discord Community**: [Join our Discord](https://discord.gg/archsim) for help
-- 🐛 **Found a bug?**: [Open an issue](https://github.com/your-org/architecture-simulator/issues)
-- 📧 **Email**: support@archsim.dev
-
 ## Contributing
 
-We love contributions from developers of all skill levels!
-
-```bash
-# Get started with development
-git clone https://github.com/your-org/architecture-simulator
-cd architecture-simulator
-pnpm install        # Install dependencies
-pnpm test          # Run tests
-pnpm simulate      # Test the simulator
-
-# Make your changes, then:
-pnpm test          # Make sure tests pass
-git commit         # Commit your changes
-git push           # Push to your fork
-# Open a Pull Request!
-```
-
-Check [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+We love contributions from developers of all skill levels! Check [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, guidelines, and how to get started.
 
 ## License
 

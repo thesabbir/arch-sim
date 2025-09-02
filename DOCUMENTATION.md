@@ -37,37 +37,6 @@ Architecture Simulator is an advanced web architecture modeling and simulation t
 
 ## Architecture
 
-### Project Structure
-
-```
-architecture-simulator/
-├── src/
-│   ├── cli/                 # Command-line interface
-│   │   ├── index.js         # Main CLI entry point
-│   │   └── commands/        # CLI command implementations
-│   │       ├── simulate.js  # Simulation command
-│   │       ├── validate.js  # Validation command
-│   │       ├── cost.js      # Cost analysis command
-│   │       ├── test.js      # Test runner command
-│   │       └── generate.js  # Generator command
-│   ├── core/                # Core business logic
-│   │   ├── simulator.js     # Main simulation engine
-│   │   └── cost-engine.js   # Cost calculation engine
-│   ├── services/            # Service modules
-│   │   ├── test-runner.js   # Test execution service
-│   │   ├── ecosystem-generator.js # Ecosystem data generator
-│   │   └── collect-pricing.js     # Pricing data collector
-│   └── lib/                 # Shared utilities
-│       ├── defaults.js      # Default configurations
-│       ├── validators.js    # Architecture validators
-│       └── latency-calculator.js # Network latency calculations
-├── data/                     # Data files
-│   └── ecosystem.yaml        # Platform ecosystem data
-├── test/                     # Test configurations
-│   └── *.test.yaml          # Architecture test files
-└── package.json             # Project configuration
-```
-
 ### Component Diagram
 
 ```
@@ -114,13 +83,9 @@ pnpm start --help
 
 ### Global Installation
 
-```bash
-# Install globally
-pnpm install -g .
+🚧 **Work in Progress** - Will be published soon!
 
-# Use anywhere
-arch-sim --help
-```
+For now, use the local development setup above.
 
 ## CLI Reference
 
@@ -648,72 +613,7 @@ this.ecosystem.platform_ecosystem.hosting_platforms.custom = [
 
 ## Development Guide
 
-### Setting Up Development Environment
-
-```bash
-# Clone repository
-git clone <repository-url>
-cd architecture-simulator
-
-# Install dependencies
-pnpm install
-
-# Run in development
-pnpm start
-
-# Run tests
-pnpm test
-
-# Lint code
-pnpm lint
-
-# Format code
-pnpm format
-```
-
-### Project Conventions
-
-1. **Code Style**
-   - ES6+ JavaScript
-   - Async/await for asynchronous code
-   - Modular architecture
-   - Clear separation of concerns
-
-2. **File Naming**
-   - Kebab-case for files: `cost-engine.js`
-   - PascalCase for classes: `ArchitectureSimulator`
-   - camelCase for functions: `calculateTotalCost`
-
-3. **Testing**
-   - Test files in `test/` directory
-   - Use `.test.yaml` extension
-   - Clear test names and descriptions
-
-### Adding New Features
-
-1. **New Command**
-   - Create command file in `src/cli/commands/`
-   - Export command function
-   - Register in `src/cli/index.js`
-
-2. **New Provider**
-   - Add to ecosystem generator
-   - Add pricing information
-   - Add performance benchmarks
-
-3. **New Validation**
-   - Add to `src/lib/validators.js`
-   - Include in validation checks
-   - Add test cases
-
-### Contributing
-
-1. Fork the repository
-2. Create feature branch
-3. Make changes
-4. Add tests
-5. Run linting and formatting
-6. Submit pull request
+For development setup, contribution guidelines, and how to add new features, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Troubleshooting
 
@@ -779,14 +679,7 @@ arch-sim simulate architecture.yaml --json
 
 ### Getting Help
 
-1. Check documentation
-2. Review example configurations
-3. Run with `--help` flag
-4. Check GitHub issues
-5. Submit bug report with:
-   - Configuration file
-   - Error message
-   - Environment details
+For development help and contribution questions, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Appendix
 
