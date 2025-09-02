@@ -1,0 +1,119 @@
+{
+  "provider": "vercel",
+  "lastUpdated": "2025-01-15T00:00:00Z",
+  "currency": "USD",
+  "billingPeriod": "monthly",
+  "tiers": [
+    {
+      "name": "Hobby",
+      "basePrice": 0,
+      "limits": {
+        "bandwidth": 100,
+        "functions": 100000,
+        "compute": 100,
+        "builds": 100,
+        "concurrent": 1
+      },
+      "features": [
+        "Personal projects",
+        "Community support",
+        "Instant rollbacks",
+        "Automatic SSL",
+        "Preview deployments",
+        "Git integration"
+      ]
+    },
+    {
+      "name": "Pro",
+      "basePrice": 20,
+      "limits": {
+        "bandwidth": 1000,
+        "functions": 1000000,
+        "compute": 1000,
+        "builds": 6000,
+        "concurrent": 12,
+        "teamMembers": 10
+      },
+      "features": [
+        "Commercial use",
+        "Email support",
+        "Advanced analytics",
+        "Password protection",
+        "Custom domains",
+        "Team collaboration",
+        "Web Analytics",
+        "Speed Insights",
+        "Cron jobs",
+        "DDoS mitigation"
+      ]
+    },
+    {
+      "name": "Enterprise",
+      "basePrice": null,
+      "limits": {
+        "bandwidth": null,
+        "functions": null,
+        "compute": null,
+        "builds": null,
+        "concurrent": null,
+        "teamMembers": null
+      },
+      "features": [
+        "Custom contracts",
+        "Dedicated support",
+        "99.99% SLA",
+        "Advanced security",
+        "Custom integrations",
+        "Compliance features",
+        "MSA & BAA available",
+        "SAML SSO",
+        "Audit logs",
+        "Isolated builds"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "bandwidth",
+      "unit": "GB",
+      "price": 0.15,
+      "freeQuota": 100
+    },
+    {
+      "name": "functions",
+      "unit": "invocation",
+      "price": 0.0000006,
+      "freeQuota": 1000000
+    },
+    {
+      "name": "compute",
+      "unit": "GB-hour",
+      "price": 0.18,
+      "freeQuota": 1000
+    },
+    {
+      "name": "builds",
+      "unit": "minute",
+      "price": 0.01,
+      "freeQuota": 6000
+    },
+    {
+      "name": "edge-requests",
+      "unit": "million",
+      "price": 0.65,
+      "freeQuota": 10
+    },
+    {
+      "name": "image-optimization",
+      "unit": "1000 images",
+      "price": 5,
+      "freeQuota": 1
+    },
+    {
+      "name": "analytics",
+      "unit": "event",
+      "price": 0.00001,
+      "freeQuota": 10000
+    }
+  ]
+}

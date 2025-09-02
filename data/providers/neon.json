@@ -1,0 +1,42 @@
+{
+  "provider": "neon",
+  "lastUpdated": "2025-01-15T00:00:00Z",
+  "currency": "USD",
+  "billingPeriod": "monthly",
+  "tiers": [
+    {
+      "name": "Free",
+      "basePrice": 0,
+      "limits": {
+        "storage": 3,
+        "compute_hours": 100,
+        "projects": 1
+      },
+      "features": ["Serverless Postgres", "Branching"]
+    },
+    {
+      "name": "Pro",
+      "basePrice": 19,
+      "limits": {
+        "storage": 10,
+        "compute_hours": 300,
+        "projects": 10
+      },
+      "features": ["Autoscaling", "Read replicas"]
+    }
+  ],
+  "services": [
+    {
+      "name": "storage",
+      "unit": "GB-month",
+      "price": 0.35,
+      "freeQuota": 10
+    },
+    {
+      "name": "compute",
+      "unit": "hour",
+      "price": 0.09,
+      "freeQuota": 300
+    }
+  ]
+}

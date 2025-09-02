@@ -1,0 +1,59 @@
+{
+  "provider": "firebase",
+  "lastUpdated": "2025-01-15T00:00:00Z",
+  "currency": "USD",
+  "billingPeriod": "monthly",
+  "tiers": [
+    {
+      "name": "Spark",
+      "basePrice": 0,
+      "limits": {
+        "hosting_storage": 10,
+        "hosting_bandwidth": 360,
+        "firestore_stored": 1,
+        "firestore_reads": 50000,
+        "firestore_writes": 20000,
+        "auth_users": 10000
+      },
+      "features": ["Free tier", "Basic features"]
+    },
+    {
+      "name": "Blaze",
+      "basePrice": 0,
+      "limits": {},
+      "features": ["Pay as you go", "All features"]
+    }
+  ],
+  "services": [
+    {
+      "name": "hosting_storage",
+      "unit": "GB-month",
+      "price": 0.026,
+      "freeQuota": 10
+    },
+    {
+      "name": "hosting_bandwidth",
+      "unit": "GB",
+      "price": 0.15,
+      "freeQuota": 10
+    },
+    {
+      "name": "firestore_storage",
+      "unit": "GB-month",
+      "price": 0.18,
+      "freeQuota": 1
+    },
+    {
+      "name": "firestore_reads",
+      "unit": "100k",
+      "price": 0.06,
+      "freeQuota": 50000
+    },
+    {
+      "name": "firestore_writes",
+      "unit": "100k",
+      "price": 0.18,
+      "freeQuota": 20000
+    }
+  ]
+}

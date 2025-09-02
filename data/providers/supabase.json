@@ -1,0 +1,50 @@
+{
+  "provider": "supabase",
+  "lastUpdated": "2025-01-15T00:00:00Z",
+  "currency": "USD",
+  "billingPeriod": "monthly",
+  "tiers": [
+    {
+      "name": "Free",
+      "basePrice": 0,
+      "limits": {
+        "database_size": 0.5,
+        "storage": 1,
+        "bandwidth": 2,
+        "auth_users": 50000
+      },
+      "features": ["2 projects", "Community support"]
+    },
+    {
+      "name": "Pro",
+      "basePrice": 25,
+      "limits": {
+        "database_size": 8,
+        "storage": 100,
+        "bandwidth": 50,
+        "auth_users": -1
+      },
+      "features": ["Unlimited projects", "Email support"]
+    }
+  ],
+  "services": [
+    {
+      "name": "database",
+      "unit": "GB-month",
+      "price": 0.125,
+      "freeQuota": 8
+    },
+    {
+      "name": "storage",
+      "unit": "GB-month",
+      "price": 0.021,
+      "freeQuota": 100
+    },
+    {
+      "name": "bandwidth",
+      "unit": "GB",
+      "price": 0.09,
+      "freeQuota": 50
+    }
+  ]
+}

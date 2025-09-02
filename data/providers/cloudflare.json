@@ -1,0 +1,69 @@
+{
+  "provider": "cloudflare",
+  "lastUpdated": "2025-01-15T00:00:00Z",
+  "currency": "USD",
+  "billingPeriod": "monthly",
+  "tiers": [
+    {
+      "name": "Free",
+      "basePrice": 0,
+      "limits": {
+        "pages_sites": -1,
+        "bandwidth": -1,
+        "workers_requests": 100000,
+        "d1_storage": 5,
+        "r2_storage": 10
+      },
+      "features": [
+        "Unlimited bandwidth",
+        "Global CDN",
+        "DDoS protection",
+        "SSL certificates"
+      ]
+    },
+    {
+      "name": "Paid",
+      "basePrice": 5,
+      "limits": {
+        "workers_requests": 10000000,
+        "d1_storage": 5,
+        "r2_storage": 10
+      },
+      "features": [
+        "10M Worker requests included",
+        "Increased limits",
+        "Priority support"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "pages",
+      "unit": "site",
+      "price": 0,
+      "freeQuota": -1,
+      "description": "Static site hosting"
+    },
+    {
+      "name": "workers",
+      "unit": "million requests",
+      "price": 0.15,
+      "freeQuota": 3,
+      "description": "Edge functions after 10M on paid plan"
+    },
+    {
+      "name": "d1",
+      "unit": "GB-month",
+      "price": 0.75,
+      "freeQuota": 5,
+      "description": "SQLite at the edge"
+    },
+    {
+      "name": "r2",
+      "unit": "GB-month",
+      "price": 0.015,
+      "freeQuota": 10,
+      "description": "Object storage with zero egress"
+    }
+  ]
+}

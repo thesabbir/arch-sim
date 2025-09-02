@@ -1,0 +1,180 @@
+{
+  "provider": "render",
+  "lastUpdated": "2025-01-15T00:00:00Z",
+  "currency": "USD",
+  "billingPeriod": "monthly",
+  "tiers": [
+    {
+      "name": "Free",
+      "basePrice": 0,
+      "limits": {
+        "bandwidth": 100,
+        "builds": 400,
+        "instances": 1,
+        "memory": 512,
+        "cpu": 0.1
+      },
+      "features": [
+        "Static sites",
+        "750 hours/month runtime",
+        "Auto-deploy from Git",
+        "Custom domains",
+        "SSL certificates"
+      ]
+    },
+    {
+      "name": "Individual",
+      "basePrice": 7,
+      "limits": {
+        "bandwidth": 100,
+        "builds": 500,
+        "instances": 1,
+        "memory": 512,
+        "cpu": 0.5
+      },
+      "features": [
+        "Everything in Free",
+        "Persistent disks",
+        "Private services",
+        "Cron jobs"
+      ]
+    },
+    {
+      "name": "Team",
+      "basePrice": 19,
+      "limits": {
+        "bandwidth": 500,
+        "builds": 1000,
+        "instances": 10,
+        "team_members": -1
+      },
+      "features": [
+        "Everything in Individual",
+        "Team management",
+        "Priority support",
+        "Advanced security"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "web-service-starter",
+      "unit": "instance-month",
+      "price": 7,
+      "freeQuota": 0,
+      "description": "Starter web service (512MB, 0.5 vCPU)"
+    },
+    {
+      "name": "web-service-standard",
+      "unit": "instance-month",
+      "price": 25,
+      "freeQuota": 0,
+      "description": "Standard web service (2GB, 1 vCPU)"
+    },
+    {
+      "name": "web-service-pro",
+      "unit": "instance-month",
+      "price": 85,
+      "freeQuota": 0,
+      "description": "Pro web service (4GB, 2 vCPU)"
+    },
+    {
+      "name": "web-service-pro-plus",
+      "unit": "instance-month",
+      "price": 175,
+      "freeQuota": 0,
+      "description": "Pro Plus web service (8GB, 4 vCPU)"
+    },
+    {
+      "name": "postgresql-starter",
+      "unit": "instance-month",
+      "price": 7,
+      "freeQuota": 0,
+      "description": "PostgreSQL Starter (256MB, 0.1 vCPU, 1GB storage)"
+    },
+    {
+      "name": "postgresql-standard",
+      "unit": "instance-month",
+      "price": 25,
+      "freeQuota": 0,
+      "description": "PostgreSQL Standard (1GB, 0.5 vCPU, 15GB storage)"
+    },
+    {
+      "name": "redis-starter",
+      "unit": "instance-month",
+      "price": 10,
+      "freeQuota": 0,
+      "description": "Redis Starter (25MB)"
+    },
+    {
+      "name": "redis-standard",
+      "unit": "instance-month",
+      "price": 30,
+      "freeQuota": 0,
+      "description": "Redis Standard (250MB)"
+    },
+    {
+      "name": "bandwidth",
+      "unit": "GB",
+      "price": 0.10,
+      "freeQuota": 100,
+      "description": "Outbound bandwidth"
+    },
+    {
+      "name": "disk-storage",
+      "unit": "GB-month",
+      "price": 0.25,
+      "freeQuota": 0,
+      "description": "Persistent disk storage"
+    },
+    {
+      "name": "static-site",
+      "unit": "site-month",
+      "price": 0,
+      "freeQuota": -1,
+      "description": "Static site hosting (free)"
+    },
+    {
+      "name": "build-minutes",
+      "unit": "minute",
+      "price": 0.01,
+      "freeQuota": 400,
+      "description": "Build minutes"
+    }
+  ],
+  "configurations": {
+    "web_services": [
+      {
+        "name": "free",
+        "memory": 512,
+        "cpu": 0.1,
+        "monthlyPrice": 0,
+        "limitations": "Spins down after 15 minutes of inactivity"
+      },
+      {
+        "name": "starter",
+        "memory": 512,
+        "cpu": 0.5,
+        "monthlyPrice": 7
+      },
+      {
+        "name": "standard",
+        "memory": 2048,
+        "cpu": 1,
+        "monthlyPrice": 25
+      },
+      {
+        "name": "pro",
+        "memory": 4096,
+        "cpu": 2,
+        "monthlyPrice": 85
+      },
+      {
+        "name": "pro_plus",
+        "memory": 8192,
+        "cpu": 4,
+        "monthlyPrice": 175
+      }
+    ]
+  }
+}

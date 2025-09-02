@@ -2,7 +2,7 @@
   "compilerOptions": {
     // Target modern Node.js
     "target": "ES2022",
-    "module": "ESNext",
+    "module": "CommonJS",
     "lib": ["ES2022"],
 
     // Node.js module resolution
@@ -47,5 +47,5 @@
     "forceConsistentCasingInFileNames": true
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "test", "**/*.test.ts", "**/*.spec.ts"]
+  "exclude": ["node_modules", "dist", "v1-test", "**/*.test.ts", "**/*.spec.ts"]
 }

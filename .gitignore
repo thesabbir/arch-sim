@@ -40,3 +40,13 @@ coverage/
 # Temporary files
 *.tmp
 *.temp
+
+# Local configuration
+asconfig.yaml
+.asconfig.yaml
+config.local.yaml
+
+# User-specific overrides
+data/overrides/local/
+data/overrides/user/
+asconfig.yaml

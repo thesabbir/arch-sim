@@ -1,0 +1,33 @@
+# Architecture Simulator Configuration
+# Copy to asconfig.yaml and add your API key
+
+# AI Configuration - Just model and API key
+ai:
+  model: gpt-3.5-turbo # Pick any supported model
+  apiKey: '' # Your API key (or use env var)
+
+# Storage
+storage:
+  dataPath: ./data
+  cacheTTL: 3600
+
+# Providers to analyze
+providers:
+  - vercel
+  - netlify
+  - aws
+  - railway
+  - render
+# --- Supported Models ---
+# OpenAI: gpt-4, gpt-4-turbo-preview, gpt-3.5-turbo
+# Anthropic: claude-3-opus, claude-3-sonnet, claude-3-haiku
+# Google: gemini-pro, gemini-pro-vision
+# Mistral: mistral-tiny, mistral-small, mistral-medium
+# Ollama: llama2, mixtral, mistral (requires local setup)
+
+# --- Environment Variables ---
+# OPENAI_API_KEY - For OpenAI models
+# ANTHROPIC_API_KEY - For Claude models
+# GOOGLE_GENERATIVE_AI_API_KEY - For Gemini models
+# MISTRAL_API_KEY - For Mistral models
+# AI_MODEL - Override model selection

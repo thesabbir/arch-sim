@@ -2,14 +2,13 @@
   "name": "architecture-simulator",
   "version": "2.0.0",
   "description": "Advanced web architecture modeling and simulation tool with granular cost analysis",
-  "main": "src/cli/index.js",
-  "type": "module",
+  "main": "dist/index.js",
   "packageManager": "pnpm@10.15.1",
   "engines": {
     "node": ">=20.0.0"
   },
   "bin": {
-    "arch-sim": "./src/cli/index.js"
+    "arch-sim": "./dist/cli/index.js"
   },
   "scripts": {
     "dev": "tsx watch src/cli/index.ts",
@@ -21,7 +20,7 @@
     "test": "vitest",
     "test:watch": "vitest --watch",
     "test:coverage": "vitest --coverage",
-    "test:architectures": "tsx src/cli/index.ts test test/architectures/*.yaml",
+    "test:architectures": "tsx src/cli/index.ts test \"test/architectures/*.yaml\"",
     "validate": "tsx src/cli/index.ts validate",
     "cost": "tsx src/cli/index.ts cost",
     "generate": "tsx src/cli/index.ts generate ecosystem",
@@ -42,10 +41,16 @@
   "author": "Architecture Simulator",
   "license": "MIT",
   "dependencies": {
+    "@ai-sdk/anthropic": "^2.0.9",
+    "@ai-sdk/google": "^2.0.11",
+    "@ai-sdk/mistral": "^2.0.12",
+    "@ai-sdk/openai": "^2.0.23",
+    "ai": "^5.0.29",
     "chalk": "^5.6.0",
     "commander": "^14.0.0",
     "glob": "^11.0.3",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "zod": "^4.1.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.34.0",

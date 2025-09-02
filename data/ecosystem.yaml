@@ -1,13 +1,6 @@
-# Generated Platform Ecosystem for Architecture Simulator
-# Generated on: 2025-09-01T10:29:42.704Z
-# 
-# This file contains all supported platforms, services, languages, and frameworks
-# for the architecture simulator tool.
-#
-
 platform_ecosystem:
   version: 1.0.0
-  last_updated: '2025-09-01'
+  last_updated: '2025-09-02'
   languages:
     backend:
       - id: javascript
@@ -400,17 +393,6 @@ platform_ecosystem:
         free_tier: true
         performance_tier: high
         global_availability: true
-      - id: fauna
-        name: Fauna
-        type: document
-        pricing_model: usage_based
-        features:
-          - serverless
-          - acid_transactions
-          - global
-        free_tier: true
-        performance_tier: high
-        global_availability: true
   caching:
     redis:
       - id: upstash_redis
@@ -549,459 +531,2153 @@ performance_benchmarks:
 pricing:
   hosting:
     vercel:
-      hobby:
-        name: Hobby
-        price_per_month: 0
-        features:
-          domains: unlimited
-          bandwidth: 100gb
-          function_invocations: 1000000
-          function_execution_time: 100gb_hours
-          build_execution_time: 6000_minutes
-          serverless_functions: true
-          edge_functions: true
-          team_members: 1
-        limitations:
-          commercial_usage: false
-          password_protection: false
-          analytics: basic
-      pro:
-        name: Pro
-        price_per_month: 20
-        features:
-          domains: unlimited
-          bandwidth: 1000gb
-          function_invocations: 10000000
-          function_execution_time: 1000gb_hours
-          build_execution_time: unlimited
-          team_members: 10
-          password_protection: true
-          analytics: advanced
-          preview_deployments: unlimited
-        overages:
-          bandwidth_per_gb: 0.4
-          function_invocations_per_million: 2
-          function_execution_per_gb_hour: 0.18
-          additional_team_member: 20
-      enterprise:
-        name: Enterprise
-        price_per_month: custom
-        features:
-          everything_in_pro: true
-          sso: true
-          advanced_security: true
-          dedicated_support: true
-          sla: 99.99%
+      provider: vercel
+      pricing_tiers:
+        - name: Hobby
+          base_cost: 0
+          billing_period: monthly
+          included_features:
+            edge_requests:
+              value: 1000000
+              original_value: 1M / month
+              unit: ''
+            fast_data_transfer:
+              value: 100000000000
+              original_value: 100 GB / month
+              unit: ''
+            blob_storage:
+              value: 1000000000
+              original_value: 1 GB / month
+              unit: ''
+            image_transformations:
+              value: 5000
+              original_value: 5,000 / month
+              unit: ''
+            image_cache_reads:
+              value: 300000
+              original_value: 300,000 / month
+              unit: ''
+            function_execution_time:
+              value: 4
+              original_value: 4 hours / month
+              unit: ''
+            function_invocations:
+              value: 1000000
+              original_value: 1M / month
+              unit: ''
+          usage_rates:
+            Edge Requests:
+              rate: 2
+              unit: per_million
+              original_unit: per million
+            Fast Data Transfer:
+              rate: 0.15
+              unit: per_gb
+              original_unit: per GB
+            Blob Storage:
+              rate: 0.023
+              unit: per_gb
+              original_unit: per GB
+            Image Transformations:
+              rate: 0.05
+              unit: per_1,000
+              original_unit: per 1,000
+            Image Cache Reads:
+              rate: 0.4
+              unit: per_million
+              original_unit: per million
+            Function Execution Time:
+              rate: 0.128
+              unit: per_hour
+              original_unit: per hour
+            Function Invocations:
+              rate: 0.6
+              unit: per_million
+              original_unit: per million
+          limits:
+            Edge Requests: 1M / month
+            Fast Data Transfer: 100 GB / month
+            Blob Storage: 1 GB / month
+            Image Transformations: 5,000 / month
+            Image Cache Reads: 300,000 / month
+            Function Execution Time: 4 hours / month
+            Function Invocations: 1M / month
+        - name: Pro
+          base_cost: 20
+          billing_period: monthly
+          included_features:
+            edge_requests:
+              value: 10000000
+              original_value: 10M / month
+              unit: ''
+            fast_data_transfer:
+              value: 1000000000000
+              original_value: 1 TB / month
+              unit: ''
+            blob_storage:
+              value: 5000000000
+              original_value: 5 GB / month
+              unit: ''
+            image_transformations:
+              value: 10000
+              original_value: 10,000 / month
+              unit: ''
+            image_cache_reads:
+              value: 600000
+              original_value: 600,000 / month
+              unit: ''
+            function_execution_time:
+              value: 16
+              original_value: 16 hours / month
+              unit: ''
+            function_invocations:
+              value: 1000000
+              original_value: 1M / month
+              unit: ''
+          usage_rates:
+            Edge Requests:
+              rate: 2
+              unit: per_million
+              original_unit: per million
+            Fast Data Transfer:
+              rate: 0.15
+              unit: per_gb
+              original_unit: per GB
+            Blob Storage:
+              rate: 0.023
+              unit: per_gb
+              original_unit: per GB
+            Image Transformations:
+              rate: 0.05
+              unit: per_1,000
+              original_unit: per 1,000
+            Image Cache Reads:
+              rate: 0.4
+              unit: per_million
+              original_unit: per million
+            Function Execution Time:
+              rate: 0.128
+              unit: per_hour
+              original_unit: per hour
+            Function Invocations:
+              rate: 0.6
+              unit: per_million
+              original_unit: per million
+          limits:
+            Edge Requests: 10M / month
+            Fast Data Transfer: 1 TB / month
+            Blob Storage: 5 GB / month
+            Image Transformations: 10,000 / month
+            Image Cache Reads: 600,000 / month
+            Function Execution Time: 16 hours / month
+            Function Invocations: 1M / month
+        - name: Enterprise
+          base_cost: 0
+          billing_period: custom
+          included_features:
+            edge_requests:
+              value: 999999
+              original_value: '999999'
+              unit: ''
+            fast_data_transfer:
+              value: 999999
+              original_value: '999999'
+              unit: ''
+            blob_storage:
+              value: 999999
+              original_value: '999999'
+              unit: ''
+            image_transformations:
+              value: 999999
+              original_value: '999999'
+              unit: ''
+            image_cache_reads:
+              value: 999999
+              original_value: '999999'
+              unit: ''
+            function_execution_time:
+              value: 999999
+              original_value: '999999'
+              unit: ''
+            function_invocations:
+              value: 999999
+              original_value: '999999'
+              unit: ''
+          usage_rates:
+            Edge Requests:
+              rate: 2
+              unit: per_million
+              original_unit: per million
+            Fast Data Transfer:
+              rate: 0.15
+              unit: per_gb
+              original_unit: per GB
+            Blob Storage:
+              rate: 0.023
+              unit: per_gb
+              original_unit: per GB
+            Image Transformations:
+              rate: 0.05
+              unit: per_1,000
+              original_unit: per 1,000
+            Image Cache Reads:
+              rate: 0.4
+              unit: per_million
+              original_unit: per million
+            Function Execution Time:
+              rate: 0.128
+              unit: per_hour
+              original_unit: per hour
+            Function Invocations:
+              rate: 0.6
+              unit: per_million
+              original_unit: per million
+          limits:
+            Edge Requests: '999999'
+            Fast Data Transfer: '999999'
+            Blob Storage: '999999'
+            Image Transformations: '999999'
+            Image Cache Reads: '999999'
+            Function Execution Time: '999999'
+            Function Invocations: '999999'
+      free_tier:
+        available: true
+        included_features:
+          Edge Requests: 1M / month
+          Fast Data Transfer: 100 GB / month
+          Blob Storage: 1 GB / month
+          Image Transformations: 5,000 / month
+          Image Cache Reads: 300,000 / month
+          Function Execution Time: 4 hours / month
+          Function Invocations: 1M / month
+        limits:
+          Edge Requests: 1M / month
+          Fast Data Transfer: 100 GB / month
+          Blob Storage: 1 GB / month
+          Image Transformations: 5,000 / month
+          Image Cache Reads: 300,000 / month
+          Function Execution Time: 4 hours / month
+          Function Invocations: 1M / month
+      enterprise_tier:
+        available: true
+        contact_sales: true
+        custom_pricing: true
+      data_quality:
+        extraction_timestamp: '2025-09-02T07:17:42.161Z'
+        validation_passed: true
+        normalization_applied: true
+    netlify:
+      provider: netlify
+      pricing_tiers:
+        - name: Free & Starter
+          base_cost: 0
+          billing_period: monthly
+          included_features:
+            bandwidth:
+              value: 100000000000
+              original_value: 100 GB/month
+              unit: ''
+            build_minutes:
+              value: 300000000
+              original_value: 300 minutes/month
+              unit: ''
+            serverless_function_invocations:
+              value: 0
+              original_value: '0'
+              unit: ''
+            edge_function_invocations:
+              value: 0
+              original_value: '0'
+              unit: ''
+            form_submissions:
+              value: 0
+              original_value: '0'
+              unit: ''
+            concurrent_builds:
+              value: 1
+              original_value: '1'
+              unit: ''
+          usage_rates:
+            bandwidth:
+              rate: 0
+              unit: per_gb
+              original_unit: per GB
+            build_minutes:
+              rate: 0
+              unit: per_minute
+              original_unit: per minute
+            serverless_function_invocations:
+              rate: 0
+              unit: per_invocation
+              original_unit: per invocation
+            edge_function_invocations:
+              rate: 0
+              unit: per_invocation
+              original_unit: per invocation
+            form_submissions:
+              rate: 0
+              unit: per_submission
+              original_unit: per submission
+            concurrent_builds:
+              rate: 0
+              unit: per_build
+              original_unit: per build
+          limits:
+            bandwidth: 100 GB/month
+            build_minutes: 300 minutes/month
+            serverless_function_invocations: '0'
+            edge_function_invocations: '0'
+            form_submissions: '0'
+            concurrent_builds: '1'
+        - name: Pro
+          base_cost: 19
+          billing_period: monthly
+          included_features:
+            bandwidth:
+              value: 1000000000000
+              original_value: 1 TB/month
+              unit: ''
+            build_minutes:
+              value: 25000000000
+              original_value: 25,000 minutes/month
+              unit: ''
+            serverless_function_invocations:
+              value: 125000
+              original_value: 125,000
+              unit: ''
+            edge_function_invocations:
+              value: 2000000
+              original_value: 2,000,000
+              unit: ''
+            form_submissions:
+              value: 100
+              original_value: '100'
+              unit: ''
+            concurrent_builds:
+              value: 3
+              original_value: '3'
+              unit: ''
+          usage_rates:
+            bandwidth:
+              rate: 55
+              unit: per_100_gb
+              original_unit: per 100 GB
+            build_minutes:
+              rate: 7
+              unit: per_500_minutes
+              original_unit: per 500 minutes
+            serverless_function_invocations:
+              rate: 25
+              unit: per_1,000_invocations
+              original_unit: per 1,000 invocations
+            edge_function_invocations:
+              rate: 2
+              unit: per_1,000_invocations
+              original_unit: per 1,000 invocations
+            form_submissions:
+              rate: 19
+              unit: per_100_submissions
+              original_unit: per 100 submissions
+            concurrent_builds:
+              rate: 40
+              unit: per_additional_build
+              original_unit: per additional build
+          limits:
+            bandwidth: 1 TB/month
+            build_minutes: 25,000 minutes/month
+            serverless_function_invocations: 125,000
+            edge_function_invocations: 2,000,000
+            form_submissions: '100'
+            concurrent_builds: '3'
+        - name: Enterprise
+          base_cost: null
+          billing_period: custom
+          included_features:
+            bandwidth:
+              value: 0
+              original_value: custom
+              unit: m
+            build_minutes:
+              value: 0
+              original_value: custom
+              unit: m
+            serverless_function_invocations:
+              value: 0
+              original_value: custom
+              unit: m
+            edge_function_invocations:
+              value: 0
+              original_value: custom
+              unit: m
+            form_submissions:
+              value: 0
+              original_value: custom
+              unit: m
+            concurrent_builds:
+              value: 0
+              original_value: custom
+              unit: m
+          usage_rates:
+            bandwidth:
+              rate: 0
+              unit: custom
+              original_unit: custom
+            build_minutes:
+              rate: 0
+              unit: custom
+              original_unit: custom
+            serverless_function_invocations:
+              rate: 0
+              unit: custom
+              original_unit: custom
+            edge_function_invocations:
+              rate: 0
+              unit: custom
+              original_unit: custom
+            form_submissions:
+              rate: 0
+              unit: custom
+              original_unit: custom
+            concurrent_builds:
+              rate: 0
+              unit: custom
+              original_unit: custom
+          limits:
+            bandwidth: custom
+            build_minutes: custom
+            serverless_function_invocations: custom
+            edge_function_invocations: custom
+            form_submissions: custom
+            concurrent_builds: custom
+      free_tier:
+        available: true
+        included_features: {}
+        limits: {}
+      enterprise_tier:
+        available: true
+        contact_sales: true
+        custom_pricing: true
+      data_quality:
+        extraction_timestamp: '2025-09-02T07:16:38.830Z'
+        validation_passed: true
+        normalization_applied: true
     render:
-      free:
-        name: Free
-        price_per_month: 0
-        features:
-          web_services: 750_hours
-          bandwidth: 100gb
-          build_minutes: 500_minutes
-          databases: 1
-          memory: 512mb
-          cpu: 0.1_cpu
-          sleep_after_inactivity: 15_minutes
-      starter:
-        name: Starter
-        price_per_month: 7
-        features:
-          memory: 512mb
-          cpu: 0.5_cpu
-          bandwidth: unlimited
-          no_sleep: true
-          custom_domains: true
-          ssl_certificates: true
-      standard:
-        name: Standard
-        price_per_month: 25
-        features:
-          memory: 2gb
-          cpu: 1_cpu
-          bandwidth: unlimited
-          background_workers: true
-          private_services: true
-      pro:
-        name: Pro
-        price_per_month: 85
-        features:
-          memory: 8gb
-          cpu: 2_cpu
-          bandwidth: unlimited
-          horizontal_scaling: true
-          advanced_metrics: true
+      provider: render
+      pricing_tiers:
+        - name: Hobby
+          base_cost: 0
+          billing_period: monthly
+          included_features:
+            bandwidth:
+              value: 100000000000
+              original_value: 100 GB
+              unit: gb
+            build_pipeline_minutes:
+              value: 500000000
+              original_value: 500 minutes
+              unit: ''
+            projects_and_environments:
+              value: 1
+              original_value: 1 project and environment
+              unit: t
+            vertical_scaling:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            horizontal_scaling:
+              value: 0
+              original_value: 'no'
+              unit: ''
+          usage_rates: {}
+          limits: {}
+        - name: Professional
+          base_cost: 19
+          billing_period: monthly
+          included_features:
+            bandwidth:
+              value: 500000000000
+              original_value: 500 GB
+              unit: gb
+            build_pipeline_minutes:
+              value: 500000000
+              original_value: 500 minutes per user
+              unit: ''
+            projects_and_environments:
+              value: 999999
+              original_value: unlimited
+              unit: ''
+            vertical_scaling:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            horizontal_scaling:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+          usage_rates: {}
+          limits:
+            team_members: '10'
+        - name: Organization
+          base_cost: 29
+          billing_period: monthly
+          included_features:
+            bandwidth:
+              value: 1000000000000
+              original_value: 1 TB
+              unit: tb
+            build_pipeline_minutes:
+              value: 500000000
+              original_value: 500 minutes per user
+              unit: ''
+            projects_and_environments:
+              value: 999999
+              original_value: unlimited
+              unit: ''
+            vertical_scaling:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            horizontal_scaling:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+          usage_rates: {}
+          limits:
+            team_members: '999999'
+        - name: Enterprise
+          base_cost: null
+          billing_period: custom
+          included_features:
+            bandwidth:
+              value: 0
+              original_value: custom
+              unit: m
+            build_pipeline_minutes:
+              value: 0
+              original_value: custom
+              unit: m
+            projects_and_environments:
+              value: 999999
+              original_value: unlimited
+              unit: ''
+            vertical_scaling:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            horizontal_scaling:
+              value: 0
+              original_value: custom
+              unit: m
+          usage_rates: {}
+          limits:
+            team_members: '999999'
+      free_tier:
+        available: true
+        included_features:
+          bandwidth: 0 GB
+          build_pipeline_minutes: 0 minutes
+          projects_and_environments: 1 project and environment
+        limits: {}
+      enterprise_tier:
+        available: true
+        contact_sales: true
+        custom_pricing: true
+      data_quality:
+        extraction_timestamp: '2025-09-02T07:17:08.930Z'
+        validation_passed: true
+        normalization_applied: true
     railway:
-      trial:
-        name: Trial
-        price_per_month: 0
-        credits: 5
-        features:
-          usage_based: true
-          credit_system: true
-          trial_period: 30_days
-      developer:
-        name: Developer
-        price_per_month: 20
-        credits: 20
-        features:
-          usage_based: true
-          priority_support: true
-          custom_domains: true
-          environment_variables: unlimited
-        usage_rates:
-          cpu_per_vcpu_hour: 0.000463
-          memory_per_gb_hour: 0.000231
-          disk_per_gb_hour: 0.000025
-          network_egress_per_gb: 0.1
-      team:
-        name: Team
-        price_per_month: 100
-        credits: 100
-        features:
-          everything_in_developer: true
-          team_management: true
-          audit_logs: true
-          priority_support: true
+      provider: railway
+      pricing_tiers:
+        - name: Hobby
+          base_cost: 5
+          billing_period: monthly
+          included_features:
+            usage_credits:
+              value: 5
+              original_value: 5 credits
+              unit: ''
+          usage_rates:
+            RAM:
+              rate: 0
+              unit: per_gb
+              original_unit: per GB
+            vCPU:
+              rate: 0
+              unit: per_vcpu
+              original_unit: per vCPU
+            volume_storage:
+              rate: 0.15
+              unit: per_gb
+              original_unit: per GB
+            egress:
+              rate: 0.05
+              unit: per_gb
+              original_unit: per GB
+          limits:
+            RAM: 8 GB
+            vCPU: 8 vCPU
+            team_seats: '1'
+            regions: '2'
+        - name: Pro
+          base_cost: 20
+          billing_period: monthly
+          included_features:
+            usage_credits:
+              value: 20
+              original_value: 20 credits
+              unit: ''
+          usage_rates:
+            RAM:
+              rate: 0
+              unit: per_gb
+              original_unit: per GB
+            vCPU:
+              rate: 0
+              unit: per_vcpu
+              original_unit: per vCPU
+            volume_storage:
+              rate: 0.15
+              unit: per_gb
+              original_unit: per GB
+            egress:
+              rate: 0.05
+              unit: per_gb
+              original_unit: per GB
+          limits:
+            RAM: 32 GB
+            vCPU: 32 vCPU
+            team_seats: '999999'
+            regions: '999999'
+        - name: Enterprise
+          base_cost: 0
+          billing_period: custom
+          included_features:
+            usage_credits:
+              value: 0
+              original_value: custom
+              unit: m
+          usage_rates:
+            RAM:
+              rate: 0
+              unit: per_gb
+              original_unit: per GB
+            vCPU:
+              rate: 0
+              unit: per_vcpu
+              original_unit: per vCPU
+            volume_storage:
+              rate: 0.15
+              unit: per_gb
+              original_unit: per GB
+            egress:
+              rate: 0.05
+              unit: per_gb
+              original_unit: per GB
+          limits:
+            RAM: '999999'
+            vCPU: '999999'
+            team_seats: '999999'
+            regions: '999999'
+      free_tier:
+        available: true
+        included_features:
+          usage_credits: 5 credits
+        limits: {}
+      enterprise_tier:
+        available: true
+        contact_sales: true
+        custom_pricing: true
+      data_quality:
+        extraction_timestamp: '2025-09-02T07:17:00.531Z'
+        validation_passed: true
+        normalization_applied: true
     flyio:
-      free_allowances:
-        name: Free Allowances
-        included:
-          cpu: 2340_cpu_hours
-          memory: 160gb_hours
-          disk: 3gb_persistent
-          bandwidth: 160gb_outbound
-      pay_as_you_go:
-        name: Pay-as-you-go
-        rates:
-          cpu_shared_per_hour: 0.0000021
-          cpu_dedicated_per_hour: 0.02
-          memory_per_gb_hour: 0.0000015
-          disk_per_gb_month: 0.15
-          bandwidth_per_gb: 0.02
-          ipv4_address_per_month: 2
-        minimums:
-          shared_cpu_1x: 256mb
-          performance_1x: 2gb
+      provider: flyio
+      pricing_tiers:
+        - name: Pay-as-You-Go
+          base_cost: 0
+          billing_period: usage
+          included_features:
+            micro_vms:
+              value: 1
+              original_value: 1 unit
+              unit: t
+            persistent_storage:
+              value: 1000000000
+              original_value: 1 GB
+              unit: gb
+            gpus:
+              value: 1
+              original_value: 1 unit
+              unit: t
+          usage_rates:
+            vCPU-hours:
+              rate: 0.01
+              unit: per_vcpu-hour
+              original_unit: per vCPU-hour
+            GB-hours:
+              rate: 0.001
+              unit: per_gb-hour
+              original_unit: per GB-hour
+            Persistent Storage Volumes:
+              rate: 0.1
+              unit: per_gb_per_month
+              original_unit: per GB per month
+            Network Bandwidth:
+              rate: 0.08
+              unit: per_gb
+              original_unit: per GB
+          limits:
+            Global Edge Deployment: 999999 units
+      free_tier:
+        available: false
+        included_features: {}
+        limits: {}
+      enterprise_tier:
+        available: true
+        contact_sales: true
+        custom_pricing: true
+      data_quality:
+        extraction_timestamp: '2025-09-02T07:17:00.530Z'
+        validation_passed: true
+        normalization_applied: true
+    firebase:
+      provider: firebase
+      pricing_tiers:
+        - name: Spark Plan
+          base_cost: 0
+          billing_period: monthly
+          included_features:
+            a_b_testing:
+              value: 0
+              original_value: no-cost
+              unit: t
+            analytics:
+              value: 0
+              original_value: no-cost
+              unit: t
+            app_check:
+              value: 0
+              original_value: no-cost, subject to quotas and limits
+              unit: ''
+            app_distribution:
+              value: 0
+              original_value: no-cost
+              unit: t
+            cloud_messaging:
+              value: 0
+              original_value: no-cost
+              unit: t
+            crashlytics:
+              value: 0
+              original_value: no-cost
+              unit: t
+            in-app_messaging:
+              value: 0
+              original_value: no-cost
+              unit: t
+            performance_monitoring:
+              value: 0
+              original_value: no-cost
+              unit: t
+            remote_config:
+              value: 0
+              original_value: no-cost
+              unit: t
+          usage_rates: {}
+          limits:
+            App Hosting Storage: 5 GB
+            Cloud Storage: 5 GB
+            Firestore Stored Data: 1 GiB
+            Firestore Document Writes: 20K writes/day
+            Firestore Document Reads: 50K reads/day
+            Firestore Document Deletes: 20K deletes/day
+            Realtime Database Stored Data: 1 GB
+            Realtime Database Downloads: 10 GB/month
+            Test Lab Virtual Device Tests: 10 tests/day
+            Test Lab Physical Device Tests: 5 tests/day
+        - name: Blaze Plan
+          base_cost: 0
+          billing_period: usage
+          included_features:
+            a_b_testing:
+              value: 0
+              original_value: no-cost
+              unit: t
+            analytics:
+              value: 0
+              original_value: no-cost
+              unit: t
+            app_check:
+              value: 0
+              original_value: no-cost, subject to quotas and limits
+              unit: ''
+            app_distribution:
+              value: 0
+              original_value: no-cost
+              unit: t
+            cloud_messaging:
+              value: 0
+              original_value: no-cost
+              unit: t
+            crashlytics:
+              value: 0
+              original_value: no-cost
+              unit: t
+            in-app_messaging:
+              value: 0
+              original_value: no-cost
+              unit: t
+            performance_monitoring:
+              value: 0
+              original_value: no-cost
+              unit: t
+            remote_config:
+              value: 0
+              original_value: no-cost
+              unit: t
+          usage_rates:
+            App Hosting Outgoing Bandwidth:
+              rate: 0.2
+              unit: per_gib_after_10_gib/month
+              original_unit: per GiB after 10 GiB/month
+            Cloud Storage:
+              rate: 0.1
+              unit: per_gb_after_5_gb
+              original_unit: per GB after 5 GB
+            Firestore Stored Data:
+              rate: 0.026
+              unit: per_gb_after_1_gib
+              original_unit: per GB after 1 GiB
+            Firestore Document Writes:
+              rate: 0.4
+              unit: per_million_after_2m/month
+              original_unit: per million after 2M/month
+            Cloud Functions Invocations:
+              rate: 0.4
+              unit: per_million_after_2m/month
+              original_unit: per million after 2M/month
+            Cloud Functions Outbound Networking:
+              rate: 0.12
+              unit: per_gb_after_5_gb/month
+              original_unit: per GB after 5 GB/month
+            Test Lab Virtual Device Tests:
+              rate: 1
+              unit: per_device/hour_after_60_min/day
+              original_unit: per device/hour after 60 min/day
+            Test Lab Physical Device Tests:
+              rate: 5
+              unit: per_device/hour_after_30_min/day
+              original_unit: per device/hour after 30 min/day
+          limits: {}
+      free_tier:
+        available: true
+        included_features:
+          A/B Testing: no-cost
+          Analytics: no-cost
+          App Check: no-cost, subject to quotas and limits
+          App Distribution: no-cost
+          Cloud Messaging: no-cost
+          Crashlytics: no-cost
+          In-App Messaging: no-cost
+          Performance Monitoring: no-cost
+          Remote Config: no-cost
+        limits: {}
+      enterprise_tier:
+        available: false
+        contact_sales: false
+        custom_pricing: false
+      data_quality:
+        extraction_timestamp: '2025-09-02T07:17:21.755Z'
+        validation_passed: true
+        normalization_applied: true
+    aws_app_runner:
+      provider: aws_app_runner
+      pricing_tiers:
+        - name: Provisioned Container Instances
+          base_cost: 0
+          billing_period: usage
+          included_features:
+            memory:
+              value: 500000000
+              original_value: 0.5 GB to 12 GB
+              unit: gb
+          usage_rates:
+            memory:
+              rate: 0.007
+              unit: per_gb-hour
+              original_unit: per GB-hour
+          limits:
+            maximum_memory: 12 GB
+        - name: Active Container Instances
+          base_cost: 0
+          billing_period: usage
+          included_features:
+            vcpu:
+              value: 0.25
+              original_value: 0.25 vCPU to 4 vCPU
+              unit: ''
+          usage_rates:
+            vCPU:
+              rate: 0.064
+              unit: per_vcpu-hour
+              original_unit: per vCPU-hour
+            memory:
+              rate: 0.007
+              unit: per_gb-hour
+              original_unit: per GB-hour
+          limits:
+            maximum_vCPU: 4 vCPU
+        - name: Build Fee
+          base_cost: 0
+          billing_period: usage
+          included_features:
+            build_time:
+              value: 0
+              original_value: based on source code changes
+              unit: ''
+          usage_rates:
+            build_time:
+              rate: 0
+              unit: per_deployment
+              original_unit: per deployment
+          limits: {}
+      free_tier:
+        available: false
+        included_features: {}
+        limits: {}
+      enterprise_tier:
+        available: true
+        contact_sales: true
+        custom_pricing: true
+      data_quality:
+        extraction_timestamp: '2025-09-02T07:17:00.532Z'
+        validation_passed: true
+        normalization_applied: true
   databases:
     neon:
-      free:
-        name: Free
-        price_per_month: 0
+      provider: neon
+      pricing_tiers:
+        - name: Free
+          base_cost: 0
+          billing_period: monthly
+          included_features:
+            compute_units_cu:
+              value: 2
+              original_value: 2 vCPU, 8 GB RAM
+              unit: m
+            storage:
+              value: 500000000
+              original_value: 0.5 GB per project
+              unit: t
+            read_replicas:
+              value: 0
+              original_value: Included
+              unit: ''
+          usage_rates:
+            CU-hours:
+              rate: 0
+              unit: per_project
+              original_unit: per project
+          limits:
+            Projects: '20'
+            Time travel duration: Not available
+        - name: Launch
+          base_cost: 5
+          billing_period: monthly
+          included_features:
+            compute_units_cu:
+              value: 16
+              original_value: 16 vCPU, 64 GB RAM
+              unit: m
+            storage:
+              value: 0.35
+              original_value: $0.35 per GB-month
+              unit: ''
+            read_replicas:
+              value: 0
+              original_value: Included
+              unit: ''
+          usage_rates:
+            CU-hours:
+              rate: 0.14
+              unit: per_cu-hour
+              original_unit: per CU-hour
+          limits:
+            Projects: '100'
+            Time travel duration: 7 days
+        - name: Scale
+          base_cost: 5
+          billing_period: monthly
+          included_features:
+            compute_units_cu:
+              value: 16
+              original_value: 16 vCPU+ (up to 56 vCPU, 224 GB RAM)
+              unit: ''
+            storage:
+              value: 0.35
+              original_value: $0.35 per GB-month
+              unit: ''
+            read_replicas:
+              value: 0
+              original_value: Included
+              unit: ''
+          usage_rates:
+            CU-hours:
+              rate: 0.26
+              unit: per_cu-hour
+              original_unit: per CU-hour
+          limits:
+            Projects: '1000'
+            Time travel duration: 30 days
+      free_tier:
+        available: true
+        included_features:
+          Compute Units (CU): 2 vCPU, 8 GB RAM
+          Storage: 0.5 GB per project
+          Read replicas: Included
         limits:
-          storage: 3gb
-          compute_hours: 191.5
-          databases: 10
-          branches: 10
-          projects: 1
-          compute_size: 0.25_vcpu
-      launch:
-        name: Launch
-        price_per_month: 19
-        includes:
-          storage: 10gb
-          compute_hours: 300
-          projects: 10
-          branches: 50
-          databases: unlimited
-        usage_rates:
-          storage_per_gb: 0.15
-          compute_per_hour_025vcpu: 0.16
-          compute_per_hour_05vcpu: 0.24
-          compute_per_hour_1vcpu: 0.48
-          compute_per_hour_2vcpu: 0.96
-          compute_per_hour_4vcpu: 1.92
-      scale:
-        name: Scale
-        price_per_month: 69
-        includes:
-          storage: 50gb
-          compute_hours: 750
-          projects: 100
-          branches: 500
-          read_replicas: true
-          connection_pooling: true
-        usage_rates:
-          storage_per_gb: 0.15
-          compute_per_hour_025vcpu: 0.16
-          compute_per_hour_8vcpu: 3.84
+          Projects: '20'
+          Time travel duration: Not available
+      enterprise_tier:
+        available: true
+        contact_sales: true
+        custom_pricing: true
+      data_quality:
+        extraction_timestamp: '2025-09-02T07:18:37.080Z'
+        validation_passed: true
+        normalization_applied: true
     planetscale:
-      hobby:
-        name: Hobby
-        price_per_month: 0
-        limits:
-          storage: 5gb
-          row_reads_per_month: 1000000000
-          row_writes_per_month: 10000000
-          databases: 1
-          branches: 1
-          connection_pooling: false
-      scaler:
-        name: Scaler
-        price_per_month: 29
-        includes:
-          storage: 10gb
-          row_reads_per_month: 10000000000
-          row_writes_per_month: 50000000
-          databases: 5
-          branches: 10
-          connection_pooling: true
-          query_insights: true
-        overages:
-          storage_per_gb: 1.25
-          reads_per_billion: 1
-          writes_per_million: 1.5
-      enterprise:
-        name: Enterprise
-        price_per_month: custom
-        features:
-          everything_in_scaler: true
-          sso: true
-          audit_logs: true
-          advanced_security: true
+      provider: planetscale
+      pricing_tiers:
+        - name: Scaler Pro
+          base_cost: 39
+          billing_period: monthly
+          included_features:
+            primary_database:
+              value: 1
+              original_value: '1'
+              unit: ''
+            replica_databases:
+              value: 2
+              original_value: '2'
+              unit: ''
+            vcpu:
+              value: 3
+              original_value: 3/8
+              unit: ''
+            memory:
+              value: 3000000000
+              original_value: 3 GB
+              unit: gb
+            storage:
+              value: 10000000000
+              original_value: 10 GB
+              unit: gb
+          usage_rates:
+            additional_storage:
+              rate: 0.5
+              unit: per_gb
+              original_unit: per GB
+          limits:
+            minimum_instances: '3'
+      free_tier:
+        available: false
+        included_features: {}
+        limits: {}
+      enterprise_tier:
+        available: true
+        contact_sales: true
+        custom_pricing: true
+      data_quality:
+        extraction_timestamp: '2025-09-02T07:18:05.436Z'
+        validation_passed: true
+        normalization_applied: true
     supabase:
-      free:
-        name: Free
-        price_per_month: 0
-        includes:
-          database_space: 500mb
-          auth_users: 50000
-          storage: 1gb
-          bandwidth: 2gb
-          edge_functions_invocations: 500000
-          realtime_connections: 200
-          email_auth: true
-        limitations:
-          projects: 2
-          pauses_after_inactivity: 1_week
-      pro:
-        name: Pro
-        price_per_month: 25
-        includes:
-          database_space: 8gb
-          auth_users: 100000
-          storage: 100gb
-          bandwidth: 50gb
-          edge_functions_invocations: 2000000
-          realtime_connections: 500
-          daily_backups: 7
-          point_in_time_recovery: true
-        overages:
-          database_per_gb: 0.125
-          auth_users_per_1k: 0.00325
-          storage_per_gb: 0.021
-          bandwidth_per_gb: 0.09
-          edge_functions_per_million: 2
+      provider: supabase
+      pricing_tiers:
+        - name: Free
+          base_cost: 0
+          billing_period: monthly
+          included_features:
+            monthly_active_users_maus:
+              value: 50000
+              original_value: 50000 users
+              unit: users
+            database_storage:
+              value: 500000000
+              original_value: 0.5 GB
+              unit: gb
+            file_storage:
+              value: 1000000000
+              original_value: 1 GB
+              unit: gb
+            egress_bandwidth:
+              value: 5000000000
+              original_value: 5 GB
+              unit: gb
+            cached_egress:
+              value: 5000000000
+              original_value: 5 GB
+              unit: gb
+            real-time_connections:
+              value: 200
+              original_value: 200 connections
+              unit: ''
+          usage_rates: {}
+          limits:
+            limit_name: 2 active projects
+        - name: Pro
+          base_cost: 25
+          billing_period: monthly
+          included_features:
+            monthly_active_users_maus:
+              value: 100000
+              original_value: 100000 users
+              unit: users
+            database_storage:
+              value: 8000000000
+              original_value: 8 GB
+              unit: gb
+            file_storage:
+              value: 100000000000
+              original_value: 100 GB
+              unit: gb
+            egress_bandwidth:
+              value: 250000000000
+              original_value: 250 GB
+              unit: gb
+            cached_egress:
+              value: 250000000000
+              original_value: 250 GB
+              unit: gb
+            real-time_connections:
+              value: 500
+              original_value: 500 connections
+              unit: ''
+          usage_rates:
+            MAUs:
+              rate: 0.00325
+              unit: per_additional_user
+              original_unit: per additional user
+            Database storage:
+              rate: 0.125
+              unit: per_gb
+              original_unit: per GB
+            Egress bandwidth:
+              rate: 0.09
+              unit: per_gb
+              original_unit: per GB
+            Cached egress:
+              rate: 0.03
+              unit: per_gb
+              original_unit: per GB
+            File storage:
+              rate: 0.021
+              unit: per_gb
+              original_unit: per GB
+          limits: {}
+        - name: Team
+          base_cost: 599
+          billing_period: monthly
+          included_features:
+            monthly_active_users_maus:
+              value: 100000
+              original_value: 100000 users
+              unit: users
+            database_storage:
+              value: 8000000000
+              original_value: 8 GB
+              unit: gb
+            file_storage:
+              value: 100000000000
+              original_value: 100 GB
+              unit: gb
+            egress_bandwidth:
+              value: 250000000000
+              original_value: 250 GB
+              unit: gb
+            cached_egress:
+              value: 250000000000
+              original_value: 250 GB
+              unit: gb
+            real-time_connections:
+              value: 500
+              original_value: 500 connections
+              unit: ''
+          usage_rates:
+            MAUs:
+              rate: 0.00325
+              unit: per_additional_user
+              original_unit: per additional user
+            Database storage:
+              rate: 0.125
+              unit: per_gb
+              original_unit: per GB
+            Egress bandwidth:
+              rate: 0.09
+              unit: per_gb
+              original_unit: per GB
+            Cached egress:
+              rate: 0.03
+              unit: per_gb
+              original_unit: per GB
+            File storage:
+              rate: 0.021
+              unit: per_gb
+              original_unit: per GB
+          limits: {}
+        - name: Enterprise
+          base_cost: null
+          billing_period: custom
+          included_features:
+            monthly_active_users_maus:
+              value: 0
+              original_value: custom
+              unit: m
+            database_storage:
+              value: 0
+              original_value: custom
+              unit: m
+            file_storage:
+              value: 0
+              original_value: custom
+              unit: m
+            egress_bandwidth:
+              value: 0
+              original_value: custom
+              unit: m
+            cached_egress:
+              value: 0
+              original_value: custom
+              unit: m
+            real-time_connections:
+              value: 0
+              original_value: custom
+              unit: m
+          usage_rates: {}
+          limits: {}
+      free_tier:
+        available: true
+        included_features:
+          Monthly Active Users (MAUs): 50000 users
+          Database storage: 0.5 GB
+          File storage: 1 GB
+          Egress bandwidth: 5 GB
+          Cached egress: 5 GB
+          Real-time connections: 200 connections
+        limits:
+          limit_name: 2 active projects
+      enterprise_tier:
+        available: true
+        contact_sales: true
+        custom_pricing: true
+      data_quality:
+        extraction_timestamp: '2025-09-02T07:18:01.117Z'
+        validation_passed: true
+        normalization_applied: true
+    mongodb_atlas:
+      provider: mongodb_atlas
+      url: https://www.mongodb.com/pricing
+      pricing_tiers: []
+      parsing_error: true
+      note: Failed to parse pricing data - manual cleanup required
   caching:
     upstash_redis:
-      free:
-        name: Free
-        price_per_month: 0
-        includes:
-          max_requests_per_day: 10000
-          max_data_size: 256mb
-          max_databases: 1
-          tls: true
-          rest_api: true
-      pay_as_you_go:
-        name: Pay-as-you-go
-        rates:
-          requests_per_100k: 0.2
-          storage_per_gb_month: 0.25
-          bandwidth_per_gb: 0.4
-        features:
-          global_database: true
-          edge_caching: true
-          rest_api: true
-          redis_compatible: true
+      provider: upstash_redis
+      pricing_tiers:
+        - name: Pay as you go
+          base_cost: 0.2
+          billing_period: usage
+          included_features:
+            commands_per_month:
+              value: 999999
+              original_value: unlimited
+              unit: ''
+            data_size:
+              value: 100000000000
+              original_value: 100 GB
+              unit: gb
+            bandwidth:
+              value: 999999
+              original_value: '999999'
+              unit: ''
+          usage_rates:
+            commands:
+              rate: 0.2
+              unit: per_100k_commands
+              original_unit: per 100K commands
+          limits:
+            global_replication: 'no'
+        - name: Fixed 250MB
+          base_cost: 10
+          billing_period: monthly
+          included_features:
+            commands_per_month:
+              value: 10000
+              original_value: 10,000
+              unit: ''
+            data_size:
+              value: 250
+              original_value: 250 MB
+              unit: mb
+            bandwidth:
+              value: 50000000000
+              original_value: 50 GB
+              unit: gb
+          usage_rates: {}
+          limits:
+            global_replication: 'no'
+        - name: Enterprise
+          base_cost: 200
+          billing_period: monthly
+          included_features:
+            commands_per_month:
+              value: 100000
+              original_value: 100,000+
+              unit: ''
+            data_size:
+              value: 10000000000000
+              original_value: 10 TB
+              unit: tb
+            bandwidth:
+              value: 999999
+              original_value: '999999'
+              unit: ''
+          usage_rates: {}
+          limits:
+            global_replication: 'yes'
+      free_tier:
+        available: true
+        included_features:
+          commands_per_month: 500 K
+          data_size: 256 MB
+          bandwidth: 10 GB
+        limits:
+          global_replication: 'no'
+      enterprise_tier:
+        available: true
+        contact_sales: true
+        custom_pricing: true
+      data_quality:
+        extraction_timestamp: '2025-09-02T07:18:44.952Z'
+        validation_passed: true
+        normalization_applied: true
     redis_cloud:
-      free:
-        name: Free
-        price_per_month: 0
-        includes:
-          memory: 30mb
-          connections: 30
-          ops_per_second: 10000
-          data_persistence: false
-          replication: false
-      fixed_plans:
-        - name: 250MB
-          price_per_month: 7
-          memory: 250mb
-          connections: 256
-          ops_per_second: 25000
-          data_persistence: true
-        - name: 1GB
-          price_per_month: 15
-          memory: 1gb
-          connections: 256
-          ops_per_second: 25000
-          data_persistence: true
-          replication: true
-        - name: 2.5GB
-          price_per_month: 35
-          memory: 2.5gb
-          connections: 512
-          ops_per_second: 25000
-          multi_zone: true
-      flexible:
-        name: Flexible Plans
-        starting_at: 56
-        rates:
-          memory_per_gb: 0.067
-          throughput_per_ops: 0.00006
+      provider: redis_cloud
+      pricing_tiers:
+        - name: Flex
+          base_cost: 5
+          billing_period: monthly
+          included_features:
+            deployment:
+              value: 0
+              original_value: Shared cloud
+              unit: ''
+            storage:
+              value: 1
+              original_value: 1-100 GB (RAM + SSD)
+              unit: ''
+            support:
+              value: 0
+              original_value: Basic support only
+              unit: ''
+          usage_rates:
+            hourly_rate:
+              rate: 0.007
+              unit: per_hour
+              original_unit: per hour
+          limits:
+            databases: '1'
+        - name: Essentials
+          base_cost: 5
+          billing_period: monthly
+          included_features:
+            deployment:
+              value: 0
+              original_value: Shared cloud
+              unit: ''
+            storage:
+              value: 250
+              original_value: 250 MB – 12 GB RAM
+              unit: m
+            support:
+              value: 0
+              original_value: Basic support only
+              unit: ''
+          usage_rates:
+            hourly_rate:
+              rate: 0.007
+              unit: per_hour
+              original_unit: per hour
+          limits:
+            databases: '1'
+        - name: Pro
+          base_cost: 200
+          billing_period: monthly
+          included_features:
+            deployment:
+              value: 0
+              original_value: Dedicated cloud
+              unit: ''
+            storage:
+              value: 6000000000
+              original_value: 6 GB RAM and up
+              unit: ''
+            support:
+              value: 24
+              original_value: 24/7 SLA-free support hotline
+              unit: ''
+          usage_rates:
+            hourly_rate:
+              rate: 0.274
+              unit: per_hour
+              original_unit: per hour
+          limits:
+            databases: multiple
+      free_tier:
+        available: true
+        included_features:
+          deployment: Shared cloud
+          storage: 30 MB
+          support: Community support
+        limits:
+          databases: '1'
+      enterprise_tier:
+        available: true
+        contact_sales: true
+        custom_pricing: true
+      data_quality:
+        extraction_timestamp: '2025-09-02T07:18:53.188Z'
+        validation_passed: true
+        normalization_applied: true
   monitoring:
     sentry:
-      developer:
-        name: Developer
-        price_per_month: 0
-        includes:
-          errors: 5000
-          performance_transactions: 10000
-          replays: 50
-          cron_monitors: 10
+      provider: sentry
+      pricing_tiers:
+        - name: developer
+          base_cost: 0
+          billing_period: monthly
+          included_features:
+            error_monitoring:
+              value: 5000
+              original_value: 5k errors
+              unit: ''
+            tracing:
+              value: 5000000
+              original_value: 5M spans
+              unit: ''
+            session_replay:
+              value: 50
+              original_value: 50 replays
+              unit: ''
+            attachments:
+              value: 1000000000
+              original_value: 1GB
+              unit: gb
+          usage_rates: {}
+          limits:
+            team_members: 1
+        - name: team
+          base_cost: 26
+          billing_period: monthly
+          included_features:
+            error_monitoring:
+              value: 50000
+              original_value: 50k errors
+              unit: ''
+            tracing:
+              value: 5000000
+              original_value: 5M spans
+              unit: ''
+            session_replay:
+              value: 50
+              original_value: 50 replays
+              unit: ''
+            attachments:
+              value: 1000000000
+              original_value: 1GB
+              unit: gb
+          usage_rates: {}
+          limits:
+            team_members: 999999
+        - name: business
+          base_cost: 80
+          billing_period: monthly
+          included_features:
+            error_monitoring:
+              value: 50000
+              original_value: 50k errors
+              unit: ''
+            tracing:
+              value: 5000000
+              original_value: 5M spans
+              unit: ''
+            session_replay:
+              value: 50
+              original_value: 50 replays
+              unit: ''
+            attachments:
+              value: 1000000000
+              original_value: 1GB
+              unit: gb
+          usage_rates: {}
+          limits:
+            team_members: 999999
+        - name: enterprise
+          base_cost: 0
+          billing_period: custom
+          included_features:
+            error_monitoring:
+              value: 0
+              original_value: Custom
+              unit: m
+            tracing:
+              value: 0
+              original_value: Custom
+              unit: m
+            session_replay:
+              value: 0
+              original_value: Custom
+              unit: m
+            attachments:
+              value: 0
+              original_value: Custom
+              unit: m
+          usage_rates: {}
+          limits:
+            team_members: 999999
+      free_tier:
+        available: true
+        included_features:
+          Error Monitoring: 5k errors
+          Tracing: 5M spans
+          Session Replay: 50 replays
+          Attachments: 1GB
+        limits:
           team_members: 1
-          data_retention: 30_days
-      team:
-        name: Team
-        price_per_month: 26
-        includes:
-          errors: 50000
-          performance_transactions: 100000
-          replays: 500
-          cron_monitors: 100
-          team_members: unlimited
-          data_retention: 90_days
-          email_support: true
-        overages:
-          errors_per_1k: 0.045
-          performance_per_1k: 0.0045
-          replays_per_1k: 4.5
-      organization:
-        name: Organization
-        price_per_month: 80
-        includes:
-          errors: 200000
-          performance_transactions: 1000000
-          replays: 5000
-          advanced_features: true
-          sso: true
-          priority_support: true
+      enterprise_tier:
+        available: true
+        contact_sales: true
+        custom_pricing: true
+      data_quality:
+        extraction_timestamp: '2025-09-02T07:19:02.018Z'
+        validation_passed: true
+        normalization_applied: true
+    rollbar:
+      provider: rollbar
+      pricing_tiers:
+        - name: Free
+          base_cost: 0
+          billing_period: monthly
+          included_features:
+            error_events:
+              value: 5000
+              original_value: 5000 events/month
+              unit: ''
+            data_retention:
+              value: 30
+              original_value: 30 days
+              unit: ''
+            real_time_feed:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            intelligent_error_grouping:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            stack_traces:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            deploy_tracking:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            custom_fields:
+              value: 999999
+              original_value: unlimited
+              unit: ''
+          usage_rates: {}
+          limits:
+            event_limit: 5000 events/month
+        - name: Essentials
+          base_cost: 15.83
+          billing_period: monthly
+          included_features:
+            error_events:
+              value: 25000
+              original_value: 25000 events/month
+              unit: ''
+            data_retention:
+              value: 90
+              original_value: 90 days
+              unit: ''
+            on_demand_events:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            custom_fields:
+              value: 999999
+              original_value: unlimited
+              unit: ''
+          usage_rates: {}
+          limits:
+            event_limit: 25000 events/month
+        - name: Advanced
+          base_cost: 32.15
+          billing_period: monthly
+          included_features:
+            error_events:
+              value: 25000
+              original_value: 25000 events/month
+              unit: ''
+            data_retention:
+              value: 180
+              original_value: 180 days
+              unit: ''
+            adaptive_alerts:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            cross_project_search:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            custom_fields:
+              value: 999999
+              original_value: unlimited
+              unit: ''
+          usage_rates: {}
+          limits:
+            event_limit: 25000 events/month
+        - name: Enterprise
+          base_cost: 25000
+          billing_period: usage
+          included_features:
+            core_features:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            data_retention:
+              value: 0
+              original_value: custom
+              unit: m
+            custom_fields:
+              value: 999999
+              original_value: unlimited
+              unit: ''
+            priority_support:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+          usage_rates: {}
+          limits:
+            event_limit: 80000000 events/month
+      free_tier:
+        available: true
+        included_features:
+          error_events: 5000 events/month
+          data_retention: 30 days
+        limits:
+          event_limit: 5000 events/month
+      enterprise_tier:
+        available: true
+        contact_sales: true
+        custom_pricing: true
+      data_quality:
+        extraction_timestamp: '2025-09-02T07:19:10.671Z'
+        validation_passed: true
+        normalization_applied: true
+    uptimerobot:
+      provider: uptimerobot
+      pricing_tiers:
+        - name: Free
+          base_cost: 0
+          billing_period: monthly
+          included_features:
+            monitors:
+              value: 50
+              original_value: '50'
+              unit: ''
+            monitoring_interval:
+              value: 5000000
+              original_value: 5 min
+              unit: ''
+            http_port_ping_monitor:
+              value: 0
+              original_value: included
+              unit: ''
+            keyword_monitor:
+              value: 0
+              original_value: included
+              unit: ''
+            location_specific_monitoring:
+              value: 0
+              original_value: not included
+              unit: ''
+            slow_response_alerts:
+              value: 0
+              original_value: not included
+              unit: ''
+            dns_monitoring:
+              value: 0
+              original_value: not included
+              unit: ''
+            ssl_monitor:
+              value: 0
+              original_value: not included
+              unit: ''
+            domain_expiration_monitor:
+              value: 0
+              original_value: not included
+              unit: ''
+            integrations:
+              value: 5
+              original_value: '5'
+              unit: ''
+            status_pages:
+              value: 0
+              original_value: basic
+              unit: ''
+            notify_seats:
+              value: 0
+              original_value: not available
+              unit: ''
+            login_seats:
+              value: 0
+              original_value: not available
+              unit: ''
+          usage_rates: {}
+          limits: {}
+        - name: Solo
+          base_cost: 8
+          billing_period: monthly
+          included_features:
+            monitors:
+              value: 10
+              original_value: '10'
+              unit: ''
+            monitoring_interval:
+              value: 60
+              original_value: 60 sec
+              unit: ''
+            http_port_ping_monitor:
+              value: 0
+              original_value: included
+              unit: ''
+            keyword_monitor:
+              value: 0
+              original_value: included
+              unit: ''
+            location_specific_monitoring:
+              value: 0
+              original_value: included
+              unit: ''
+            slow_response_alerts:
+              value: 0
+              original_value: included
+              unit: ''
+            dns_monitoring:
+              value: 0
+              original_value: included
+              unit: ''
+            ssl_monitor:
+              value: 0
+              original_value: included
+              unit: ''
+            domain_expiration_monitor:
+              value: 0
+              original_value: included
+              unit: ''
+            integrations:
+              value: 9
+              original_value: '9'
+              unit: ''
+            status_pages:
+              value: 0
+              original_value: basic
+              unit: ''
+            notify_seats:
+              value: 0
+              original_value: available
+              unit: ''
+            login_seats:
+              value: 0
+              original_value: not available
+              unit: ''
+          usage_rates: {}
+          limits: {}
+        - name: Team
+          base_cost: 34
+          billing_period: monthly
+          included_features:
+            monitors:
+              value: 100
+              original_value: '100'
+              unit: ''
+            monitoring_interval:
+              value: 60
+              original_value: 60 sec
+              unit: ''
+            http_port_ping_monitor:
+              value: 0
+              original_value: included
+              unit: ''
+            keyword_monitor:
+              value: 0
+              original_value: included
+              unit: ''
+            location_specific_monitoring:
+              value: 0
+              original_value: included
+              unit: ''
+            slow_response_alerts:
+              value: 0
+              original_value: included
+              unit: ''
+            dns_monitoring:
+              value: 0
+              original_value: included
+              unit: ''
+            ssl_monitor:
+              value: 0
+              original_value: included
+              unit: ''
+            domain_expiration_monitor:
+              value: 0
+              original_value: included
+              unit: ''
+            integrations:
+              value: 12
+              original_value: '12'
+              unit: ''
+            status_pages:
+              value: 0
+              original_value: full-featured
+              unit: ''
+            notify_seats:
+              value: 3
+              original_value: '3'
+              unit: ''
+            login_seats:
+              value: 3
+              original_value: '3'
+              unit: ''
+          usage_rates: {}
+          limits: {}
+        - name: Enterprise
+          base_cost: 64
+          billing_period: monthly
+          included_features:
+            monitors:
+              value: 200
+              original_value: '200'
+              unit: ''
+            monitoring_interval:
+              value: 30
+              original_value: 30 sec
+              unit: ''
+            http_port_ping_monitor:
+              value: 0
+              original_value: included
+              unit: ''
+            keyword_monitor:
+              value: 0
+              original_value: included
+              unit: ''
+            location_specific_monitoring:
+              value: 0
+              original_value: included
+              unit: ''
+            slow_response_alerts:
+              value: 0
+              original_value: included
+              unit: ''
+            dns_monitoring:
+              value: 0
+              original_value: included
+              unit: ''
+            ssl_monitor:
+              value: 0
+              original_value: included
+              unit: ''
+            domain_expiration_monitor:
+              value: 0
+              original_value: included
+              unit: ''
+            integrations:
+              value: 12
+              original_value: '12'
+              unit: ''
+            status_pages:
+              value: 999999
+              original_value: unlimited
+              unit: ''
+            notify_seats:
+              value: 5
+              original_value: '5'
+              unit: ''
+            login_seats:
+              value: 5
+              original_value: '5'
+              unit: ''
+          usage_rates: {}
+          limits: {}
+      free_tier:
+        available: true
+        included_features:
+          monitors: '50'
+          monitoring_interval: 5 min
+          http_port_ping_monitor: included
+          keyword_monitor: included
+        limits: {}
+      enterprise_tier:
+        available: true
+        contact_sales: true
+        custom_pricing: true
+      data_quality:
+        extraction_timestamp: '2025-09-02T07:19:25.755Z'
+        validation_passed: true
+        normalization_applied: true
   authentication:
-    auth0:
-      free:
-        name: Free
-        price_per_month: 0
-        includes:
-          monthly_active_users: 7500
-          social_connections: unlimited
-          username_password: true
-          passwordless: true
-          multifactor_auth: true
-        limitations:
-          advanced_features: false
-          customize_emails: false
-          remove_branding: false
-      essentials:
-        name: Essentials
-        price_per_mau: 0.0175
-        minimum_monthly: 35
-        includes:
-          everything_in_free: true
-          remove_branding: true
-          custom_emails: true
-          advanced_security: true
-          phone_support: true
-      professional:
-        name: Professional
-        price_per_mau: 0.028
-        minimum_monthly: 240
-        includes:
-          everything_in_essentials: true
-          advanced_mfa: true
-          breached_password_detection: true
-          organizations: true
-          machine_to_machine: 1000
     clerk:
-      free:
-        name: Free
-        price_per_month: 0
-        includes:
-          monthly_active_users: 10000
+      provider: clerk
+      pricing_tiers:
+        - name: Free plan
+          base_cost: 0
+          billing_period: monthly
+          included_features:
+            monthly_active_users_maus:
+              value: 10000
+              original_value: '10000'
+              unit: ''
+            monthly_active_organizations_maos:
+              value: 100
+              original_value: '100'
+              unit: ''
+            authentication_methods:
+              value: 3
+              original_value: >-
+                Up to 3 social connections, usernames, passwords, email codes,
+                email links, sign in tokens, Web3 wallets, automatic account
+                linking
+              unit: g
+            custom_domain_support:
+              value: 0
+              original_value: 'Yes'
+              unit: ''
+            branding_options:
+              value: 0
+              original_value: Clerk branding included
+              unit: ''
+          usage_rates: {}
+          limits: {}
+        - name: Pro plan
+          base_cost: 25
+          billing_period: monthly
+          included_features:
+            monthly_active_users_maus:
+              value: 10000
+              original_value: '10000'
+              unit: ''
+            monthly_active_organizations_maos:
+              value: 100
+              original_value: '100'
+              unit: ''
+            authentication_methods:
+              value: 999999
+              original_value: >-
+                Unlimited social connections, usernames, passwords, email codes,
+                email links, sign in tokens, Web3 wallets, automatic account
+                linking, SMS codes
+              unit: ''
+            custom_domain_support:
+              value: 0
+              original_value: 'Yes'
+              unit: ''
+            branding_options:
+              value: 0
+              original_value: Clerk branding removed
+              unit: ''
+          usage_rates:
+            Additional MAUs:
+              rate: 0.02
+              unit: per_additional_mau
+              original_unit: per additional MAU
+            Additional MAOs:
+              rate: 1
+              unit: per_additional_mao
+              original_unit: per additional MAO
+          limits: {}
+      free_tier:
+        available: true
+        included_features:
+          Monthly Active Users (MAUs): '10000'
+          Monthly Active Organizations (MAOs): '100'
+          Authentication methods: >-
+            Up to 3 social connections, usernames, passwords, email codes, email
+            links, sign in tokens, Web3 wallets, automatic account linking
+          Custom domain support: 'Yes'
+          Branding options: Clerk branding included
+        limits: {}
+      enterprise_tier:
+        available: true
+        contact_sales: true
+        custom_pricing: true
+      data_quality:
+        extraction_timestamp: '2025-09-02T07:19:37.304Z'
+        validation_passed: true
+        normalization_applied: true
+    auth0:
+      provider: auth0
+      pricing_tiers:
+        - name: Free
+          base_cost: 0
+          billing_period: monthly
+          included_features:
+            monthly_active_users:
+              value: 25000
+              original_value: 25000 users
+              unit: users
+            custom_domain:
+              value: 1
+              original_value: '1'
+              unit: ''
+            passwordless:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            social_connections:
+              value: 999999
+              original_value: unlimited
+              unit: ''
+            organizations:
+              value: 5
+              original_value: '5'
+              unit: ''
+            sso:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            branded_forms:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            basic_attack_protection:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            community_support:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+          usage_rates: {}
+          limits: {}
+        - name: Essentials
+          base_cost: 35
+          billing_period: monthly
+          included_features:
+            monthly_active_users:
+              value: 500
+              original_value: 500 users
+              unit: users
+            multi_factor_authentication:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            organizations:
+              value: 10
+              original_value: '10'
+              unit: ''
+            audit_logs:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            production_development_environments:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            standard_support:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+          usage_rates: {}
+          limits: {}
+        - name: Professional
+          base_cost: 240
+          billing_period: monthly
+          included_features:
+            monthly_active_users:
+              value: 1000
+              original_value: 1000 users
+              unit: users
+            use_existing_user_database:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            multi_factor_authentication:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            organizations:
+              value: 10
+              original_value: '10'
+              unit: ''
+            enhanced_attack_protection:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+          usage_rates: {}
+          limits: {}
+        - name: Enterprise
+          base_cost: null
+          billing_period: custom
+          included_features:
+            monthly_active_users:
+              value: 0
+              original_value: custom tiers available
+              unit: ''
+            custom_user_sso_tiers:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            99.99%_sla:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            enterprise_rate_limits:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+            enterprise_administration_support:
+              value: 0
+              original_value: 'yes'
+              unit: ''
+          usage_rates: {}
+          limits: {}
+      free_tier:
+        available: true
+        included_features:
+          monthly_active_users: 25000 users
+          custom_domain: '1'
+          passwordless: 'yes'
           social_connections: unlimited
-          email_password: true
-          phone_auth: true
-          organizations: 3
-          webhooks: true
-      pro:
-        name: Pro
-        price_per_month: 25
-        includes:
-          monthly_active_users: 10000
-          organizations: unlimited
-          advanced_security: true
-          remove_branding: true
-          priority_support: true
-          audit_logs: true
-        overages:
-          mau_per_1k_over_10k: 0.02
-      enterprise:
-        name: Enterprise
-        price_per_month: custom
-        features:
-          sso: true
-          scim: true
-          advanced_security: true
-          dedicated_support: true
-          sla: true
-  communication: {}
-  storage: {}
-  cdn:
-    cloudflare:
-      free:
-        name: Free
-        price_per_month: 0
-        includes:
-          bandwidth: unlimited
-          requests: unlimited
-          ssl_certificates: shared
-          ddos_protection: basic
-          cdn: true
-          dns: true
-        limitations:
-          page_rules: 3
-          workers: 100000
-          kv_operations: 100000
-      pro:
-        name: Pro
-        price_per_month: 20
-        includes:
-          everything_in_free: true
-          waf: true
-          page_rules: 20
-          image_optimization: true
-          mobile_optimization: true
-          polish: true
-      business:
-        name: Business
-        price_per_month: 200
-        includes:
-          everything_in_pro: true
-          advanced_ddos: true
-          page_rules: 50
-          load_balancing: true
-          advanced_security: true
-          priority_support: true
-      workers:
-        name: Workers
-        free_tier:
-          requests_per_day: 100000
-          cpu_time_per_request: 10ms
-        bundled:
-          price_per_month: 5
-          requests_included: 10000000
-          cpu_time_per_request: 50ms
-          overages:
-            requests_per_million: 0.5
-            duration_per_gb_second: 12.5
+          organizations: '5'
+          SSO: 'yes'
+          branded_forms: 'yes'
+          basic_attack_protection: 'yes'
+          community_support: 'yes'
+        limits: {}
+      enterprise_tier:
+        available: true
+        contact_sales: true
+        custom_pricing: true
+      data_quality:
+        extraction_timestamp: '2025-09-02T07:19:48.430Z'
+        validation_passed: true
+        normalization_applied: true
+  last_updated: '2025-09-02T07:16:22.213Z'
+  collection_method: ai_crawler

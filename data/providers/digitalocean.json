@@ -1,0 +1,44 @@
+{
+  "provider": "digitalocean",
+  "lastUpdated": "2025-01-15T00:00:00Z",
+  "currency": "USD",
+  "billingPeriod": "monthly",
+  "tiers": [
+    {
+      "name": "Basic",
+      "basePrice": 5,
+      "limits": {
+        "memory": 512,
+        "cpu": 1,
+        "bandwidth": 500
+      },
+      "features": ["App Platform", "Managed infrastructure"]
+    }
+  ],
+  "services": [
+    {
+      "name": "basic_app",
+      "unit": "instance",
+      "price": 5,
+      "freeQuota": 0
+    },
+    {
+      "name": "professional_app",
+      "unit": "instance",
+      "price": 12,
+      "freeQuota": 0
+    },
+    {
+      "name": "database",
+      "unit": "instance",
+      "price": 15,
+      "freeQuota": 0
+    },
+    {
+      "name": "bandwidth",
+      "unit": "GB",
+      "price": 0.01,
+      "freeQuota": 500
+    }
+  ]
+}

@@ -17,14 +17,16 @@
 
 ## Overview
 
-Architecture Simulator is an advanced web architecture modeling and simulation tool designed to help engineers make informed decisions about infrastructure choices through cost analysis, performance validation, and architectural recommendations.
+Architecture Simulator v2.0 is an AI-powered cloud cost intelligence platform that helps engineers make data-driven infrastructure decisions through automated recommendations, multi-provider cost analysis, and performance validation.
 
 ### Key Features
 
-- **Multi-Cloud Support**: AWS, GCP, Azure, and modern PaaS providers
-- **Real-time Cost Analysis**: Accurate pricing calculations with optimization suggestions
+- **AI-Powered Intelligence**: Natural language input with smart recommendations using GPT-4, Claude, or local models
+- **12 Cloud Providers**: AWS, Vercel, Netlify, Railway, Render, Fly.io, Cloudflare, Firebase, Supabase, PlanetScale, Neon, DigitalOcean
+- **Real-time Cost Analysis**: Accurate pricing calculations with automatic savings detection (up to 70% cost reduction)
 - **Performance Simulation**: Validate architecture against performance requirements
 - **Comprehensive Testing**: Built-in test framework for architecture validation
+- **Plugin Architecture**: Easily extensible for new providers
 - **Unified CLI**: Single command interface for all operations
 
 ### Use Cases
@@ -83,9 +85,13 @@ pnpm start --help
 
 ### Global Installation
 
-🚧 **Work in Progress** - Will be published soon!
+```bash
+# Install globally (coming soon to npm)
+npm install -g architecture-simulator
 
-For now, use the local development setup above.
+# Or use locally with pnpm
+pnpm start [command] [options]
+```
 
 ## CLI Reference
 
@@ -704,7 +710,7 @@ For development help and contribution questions, see [CONTRIBUTING.md](CONTRIBUT
 #### Databases
 
 - **SQL**: Neon, PlanetScale, Supabase
-- **NoSQL**: MongoDB Atlas, Fauna
+- **NoSQL**: MongoDB Atlas
 
 #### Cache Providers
 
@@ -737,4 +743,4 @@ For issues and questions:
 
 ---
 
-_Last Updated: September 2024_
+_Last Updated: January 2025_

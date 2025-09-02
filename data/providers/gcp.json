@@ -1,0 +1,244 @@
+{
+  "provider": "gcp",
+  "lastUpdated": "2025-01-15T00:00:00Z",
+  "currency": "USD",
+  "billingPeriod": "monthly",
+  "compute": {
+    "instances": [
+      {
+        "type": "e2-micro",
+        "vcpu": 0.25,
+        "memory": 1,
+        "pricePerHour": {
+          "onDemand": 0.00838,
+          "spot": 0.00251,
+          "committed1yr": 0.0053,
+          "committed3yr": 0.00378
+        }
+      },
+      {
+        "type": "e2-small",
+        "vcpu": 0.5,
+        "memory": 2,
+        "pricePerHour": {
+          "onDemand": 0.01675,
+          "spot": 0.00503,
+          "committed1yr": 0.01059,
+          "committed3yr": 0.00756
+        }
+      },
+      {
+        "type": "e2-medium",
+        "vcpu": 1,
+        "memory": 4,
+        "pricePerHour": {
+          "onDemand": 0.0335,
+          "spot": 0.01005,
+          "committed1yr": 0.02119,
+          "committed3yr": 0.01512
+        }
+      },
+      {
+        "type": "n1-standard-1",
+        "vcpu": 1,
+        "memory": 3.75,
+        "pricePerHour": {
+          "onDemand": 0.0475,
+          "spot": 0.01,
+          "committed1yr": 0.0299,
+          "committed3yr": 0.0214
+        }
+      },
+      {
+        "type": "n2-standard-2",
+        "vcpu": 2,
+        "memory": 8,
+        "pricePerHour": {
+          "onDemand": 0.0971,
+          "spot": 0.0291,
+          "committed1yr": 0.0614,
+          "committed3yr": 0.0438
+        }
+      },
+      {
+        "type": "n2-standard-4",
+        "vcpu": 4,
+        "memory": 16,
+        "pricePerHour": {
+          "onDemand": 0.1942,
+          "spot": 0.0583,
+          "committed1yr": 0.1228,
+          "committed3yr": 0.0877
+        }
+      }
+    ],
+    "regions": [
+      {
+        "code": "us-central1",
+        "name": "Iowa",
+        "priceMultiplier": 1.0
+      },
+      {
+        "code": "us-east1",
+        "name": "South Carolina",
+        "priceMultiplier": 1.0
+      },
+      {
+        "code": "europe-west1",
+        "name": "Belgium",
+        "priceMultiplier": 1.1
+      },
+      {
+        "code": "asia-southeast1",
+        "name": "Singapore",
+        "priceMultiplier": 1.13
+      }
+    ]
+  },
+  "storage": {
+    "persistentDisk": {
+      "standard": {
+        "pricePerGBMonth": 0.04
+      },
+      "ssd": {
+        "pricePerGBMonth": 0.17
+      },
+      "balanced": {
+        "pricePerGBMonth": 0.10
+      }
+    },
+    "cloudStorage": {
+      "standard": {
+        "pricePerGBMonth": 0.020,
+        "classA": 0.005,
+        "classB": 0.0004
+      },
+      "nearline": {
+        "pricePerGBMonth": 0.010,
+        "retrieval": 0.01
+      },
+      "coldline": {
+        "pricePerGBMonth": 0.004,
+        "retrieval": 0.02
+      },
+      "archive": {
+        "pricePerGBMonth": 0.0012,
+        "retrieval": 0.05
+      }
+    }
+  },
+  "network": {
+    "dataTransfer": {
+      "internetEgress": [
+        {
+          "upToGB": 1024,
+          "pricePerGB": 0.12
+        },
+        {
+          "upToGB": 10240,
+          "pricePerGB": 0.11
+        },
+        {
+          "upToGB": 153600,
+          "pricePerGB": 0.08
+        }
+      ],
+      "interRegion": 0.01,
+      "interZone": 0.01
+    },
+    "loadBalancer": {
+      "forwardingRule": {
+        "pricePerHour": 0.025
+      },
+      "dataProcessing": {
+        "pricePerGB": 0.008
+      }
+    }
+  },
+  "database": {
+    "cloudSQL": {
+      "mysql": [
+        {
+          "type": "db-f1-micro",
+          "vcpu": 0.6,
+          "memory": 0.614,
+          "pricePerHour": 0.0150
+        },
+        {
+          "type": "db-n1-standard-1",
+          "vcpu": 1,
+          "memory": 3.75,
+          "pricePerHour": 0.0965
+        },
+        {
+          "type": "db-n1-standard-2",
+          "vcpu": 2,
+          "memory": 7.5,
+          "pricePerHour": 0.1930
+        }
+      ],
+      "storage": {
+        "ssd": {
+          "pricePerGBMonth": 0.17
+        },
+        "hdd": {
+          "pricePerGBMonth": 0.09
+        }
+      },
+      "backup": {
+        "pricePerGBMonth": 0.08
+      }
+    },
+    "firestore": {
+      "documentReads": {
+        "pricePerMillion": 0.06
+      },
+      "documentWrites": {
+        "pricePerMillion": 0.18
+      },
+      "documentDeletes": {
+        "pricePerMillion": 0.02
+      },
+      "storage": {
+        "pricePerGBMonth": 0.18
+      }
+    }
+  },
+  "serverless": {
+    "cloudRun": {
+      "cpu": {
+        "pricePerVCPUSecond": 0.00002400
+      },
+      "memory": {
+        "pricePerGBSecond": 0.00000250
+      },
+      "requests": {
+        "pricePerMillion": 0.40
+      }
+    },
+    "cloudFunctions": {
+      "invocations": {
+        "freePerMonth": 2000000,
+        "pricePerMillion": 0.40
+      },
+      "compute": {
+        "freeGBSeconds": 400000,
+        "pricePerGBSecond": 0.0000025,
+        "freeCPUSeconds": 200000,
+        "pricePerGHzSecond": 0.0000100
+      }
+    }
+  },
+  "ai": {
+    "vertexAI": {
+      "palm2": {
+        "inputTokens": 0.00025,
+        "outputTokens": 0.0005
+      },
+      "gemini": {
+        "inputTokens": 0.00035,
+        "outputTokens": 0.00105
+      }
+    }
+  }
+}

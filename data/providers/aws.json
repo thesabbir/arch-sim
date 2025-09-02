@@ -1,0 +1,351 @@
+{
+  "provider": "aws",
+  "lastUpdated": "2025-01-15T00:00:00Z",
+  "currency": "USD",
+  "billingPeriod": "monthly",
+  "services": [
+    {
+      "name": "bandwidth",
+      "unit": "GB",
+      "price": 0.09,
+      "freeQuota": 100,
+      "description": "Data transfer out to internet"
+    },
+    {
+      "name": "apprunner_vcpu",
+      "unit": "hour",
+      "price": 0.064,
+      "description": "App Runner vCPU hours"
+    },
+    {
+      "name": "apprunner_memory",
+      "unit": "GB-hour",
+      "price": 0.007,
+      "description": "App Runner memory"
+    },
+    {
+      "name": "rds_storage",
+      "unit": "GB-month",
+      "price": 0.08,
+      "description": "RDS database storage"
+    },
+    {
+      "name": "rds_io",
+      "unit": "million",
+      "price": 0.10,
+      "description": "RDS I/O operations"
+    },
+    {
+      "name": "rds_backup",
+      "unit": "GB-month",
+      "price": 0.095,
+      "freeQuota": 1,
+      "description": "RDS backup storage"
+    },
+    {
+      "name": "s3_storage",
+      "unit": "GB-month",
+      "price": 0.023,
+      "tiers": [
+        { "limit": 50000, "price": 0.023 },
+        { "limit": 450000, "price": 0.022 },
+        { "limit": null, "price": 0.021 }
+      ],
+      "description": "S3 standard storage"
+    },
+    {
+      "name": "s3_get_requests",
+      "unit": "1000",
+      "price": 0.0004,
+      "description": "S3 GET requests"
+    },
+    {
+      "name": "s3_put_requests",
+      "unit": "1000",
+      "price": 0.005,
+      "description": "S3 PUT/POST/LIST requests"
+    },
+    {
+      "name": "s3_transfer",
+      "unit": "GB",
+      "price": 0.09,
+      "freeQuota": 1,
+      "tiers": [
+        { "limit": 9999, "price": 0.09 },
+        { "limit": 40000, "price": 0.085 },
+        { "limit": 100000, "price": 0.07 },
+        { "limit": null, "price": 0.05 }
+      ],
+      "description": "S3 data transfer out"
+    }
+  ],
+  "ec2": {
+    "instances": [
+      {
+        "type": "t3.micro",
+        "vcpu": 2,
+        "memory": 1,
+        "pricePerHour": {
+          "onDemand": 0.0104,
+          "spot": 0.0031,
+          "reserved1yr": 0.0071,
+          "reserved3yr": 0.0047
+        },
+        "networkPerformance": "Up to 5 Gigabit"
+      },
+      {
+        "type": "t3.small",
+        "vcpu": 2,
+        "memory": 2,
+        "pricePerHour": {
+          "onDemand": 0.0208,
+          "spot": 0.0062,
+          "reserved1yr": 0.0143,
+          "reserved3yr": 0.0095
+        },
+        "networkPerformance": "Up to 5 Gigabit"
+      },
+      {
+        "type": "t3.medium",
+        "vcpu": 2,
+        "memory": 4,
+        "pricePerHour": {
+          "onDemand": 0.0416,
+          "spot": 0.0125,
+          "reserved1yr": 0.0286,
+          "reserved3yr": 0.019
+        },
+        "networkPerformance": "Up to 5 Gigabit"
+      },
+      {
+        "type": "t3.large",
+        "vcpu": 2,
+        "memory": 8,
+        "pricePerHour": {
+          "onDemand": 0.0832,
+          "spot": 0.025,
+          "reserved1yr": 0.0571,
+          "reserved3yr": 0.038
+        },
+        "networkPerformance": "Up to 5 Gigabit"
+      },
+      {
+        "type": "m5.large",
+        "vcpu": 2,
+        "memory": 8,
+        "pricePerHour": {
+          "onDemand": 0.096,
+          "spot": 0.035,
+          "reserved1yr": 0.066,
+          "reserved3yr": 0.044
+        },
+        "networkPerformance": "Up to 10 Gigabit"
+      },
+      {
+        "type": "m5.xlarge",
+        "vcpu": 4,
+        "memory": 16,
+        "pricePerHour": {
+          "onDemand": 0.192,
+          "spot": 0.071,
+          "reserved1yr": 0.132,
+          "reserved3yr": 0.088
+        },
+        "networkPerformance": "Up to 10 Gigabit"
+      },
+      {
+        "type": "m5.2xlarge",
+        "vcpu": 8,
+        "memory": 32,
+        "pricePerHour": {
+          "onDemand": 0.384,
+          "spot": 0.142,
+          "reserved1yr": 0.264,
+          "reserved3yr": 0.176
+        },
+        "networkPerformance": "Up to 10 Gigabit"
+      },
+      {
+        "type": "c5.large",
+        "vcpu": 2,
+        "memory": 4,
+        "pricePerHour": {
+          "onDemand": 0.085,
+          "spot": 0.032,
+          "reserved1yr": 0.058,
+          "reserved3yr": 0.039
+        },
+        "networkPerformance": "Up to 10 Gigabit"
+      },
+      {
+        "type": "c5.xlarge",
+        "vcpu": 4,
+        "memory": 8,
+        "pricePerHour": {
+          "onDemand": 0.17,
+          "spot": 0.064,
+          "reserved1yr": 0.117,
+          "reserved3yr": 0.078
+        },
+        "networkPerformance": "Up to 10 Gigabit"
+      },
+      {
+        "type": "r5.large",
+        "vcpu": 2,
+        "memory": 16,
+        "pricePerHour": {
+          "onDemand": 0.126,
+          "spot": 0.038,
+          "reserved1yr": 0.087,
+          "reserved3yr": 0.058
+        },
+        "networkPerformance": "Up to 10 Gigabit"
+      }
+    ],
+    "regions": [
+      {
+        "code": "us-east-1",
+        "name": "US East (N. Virginia)",
+        "priceMultiplier": 1.0
+      },
+      {
+        "code": "us-west-2",
+        "name": "US West (Oregon)",
+        "priceMultiplier": 1.0
+      },
+      {
+        "code": "eu-west-1",
+        "name": "EU (Ireland)",
+        "priceMultiplier": 1.05
+      },
+      {
+        "code": "ap-southeast-1",
+        "name": "Asia Pacific (Singapore)",
+        "priceMultiplier": 1.12
+      },
+      {
+        "code": "ap-northeast-1",
+        "name": "Asia Pacific (Tokyo)",
+        "priceMultiplier": 1.14
+      }
+    ]
+  },
+  "storage": {
+    "ebs": {
+      "gp3": {
+        "pricePerGBMonth": 0.08,
+        "iopsIncluded": 3000,
+        "additionalIOPSPrice": 0.005
+      },
+      "gp2": {
+        "pricePerGBMonth": 0.10
+      },
+      "io2": {
+        "pricePerGBMonth": 0.125,
+        "pricePerIOPS": 0.065
+      }
+    },
+    "s3": {
+      "standard": {
+        "firstTB": 0.023,
+        "next49TB": 0.022,
+        "over50TB": 0.021
+      },
+      "infrequentAccess": {
+        "pricePerGB": 0.0125
+      },
+      "glacier": {
+        "instant": 0.004,
+        "flexible": 0.0036,
+        "deep": 0.00099
+      }
+    }
+  },
+  "network": {
+    "dataTransfer": {
+      "internetEgress": [
+        {
+          "upToGB": 10240,
+          "pricePerGB": 0.09
+        },
+        {
+          "upToGB": 51200,
+          "pricePerGB": 0.085
+        },
+        {
+          "upToGB": 153600,
+          "pricePerGB": 0.07
+        },
+        {
+          "upToGB": 999999999,
+          "pricePerGB": 0.05
+        }
+      ],
+      "interRegion": 0.02,
+      "interAZ": 0.01
+    },
+    "elasticIP": {
+      "attached": 0,
+      "unattached": 0.005
+    },
+    "natGateway": {
+      "hourly": 0.045,
+      "dataProcessingPerGB": 0.045
+    },
+    "loadBalancer": {
+      "alb": {
+        "hourly": 0.0225,
+        "lcuHour": 0.008
+      },
+      "nlb": {
+        "hourly": 0.0225,
+        "nlcuHour": 0.006
+      }
+    }
+  },
+  "rds": {
+    "instances": [
+      {
+        "type": "db.t3.micro",
+        "vcpu": 2,
+        "memory": 1,
+        "pricePerHour": 0.017
+      },
+      {
+        "type": "db.t3.small",
+        "vcpu": 2,
+        "memory": 2,
+        "pricePerHour": 0.034
+      },
+      {
+        "type": "db.m5.large",
+        "vcpu": 2,
+        "memory": 8,
+        "pricePerHour": 0.171
+      },
+      {
+        "type": "db.m5.xlarge",
+        "vcpu": 4,
+        "memory": 16,
+        "pricePerHour": 0.342
+      }
+    ],
+    "storage": {
+      "gp3": 0.115,
+      "io1": 0.125
+    },
+    "backup": {
+      "pricePerGB": 0.095
+    }
+  },
+  "lambda": {
+    "requests": {
+      "freePerMonth": 1000000,
+      "pricePerMillion": 0.20
+    },
+    "compute": {
+      "freeGBSeconds": 400000,
+      "pricePerGBSecond": 0.0000166667
+    }
+  }
+}

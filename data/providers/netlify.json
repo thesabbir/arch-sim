@@ -1,0 +1,106 @@
+{
+  "provider": "netlify",
+  "lastUpdated": "2025-01-15T00:00:00Z",
+  "currency": "USD",
+  "billingPeriod": "monthly",
+  "tiers": [
+    {
+      "name": "Free",
+      "basePrice": 0,
+      "limits": {
+        "bandwidth": 100,
+        "builds": 300,
+        "functions": 125000,
+        "concurrent_builds": 1,
+        "team_members": 1
+      },
+      "features": [
+        "Continuous deployment",
+        "Instant rollbacks",
+        "Deploy previews",
+        "Custom domain",
+        "HTTPS"
+      ]
+    },
+    {
+      "name": "Starter",
+      "basePrice": 19,
+      "limits": {
+        "bandwidth": 100,
+        "builds": 300,
+        "functions": 125000,
+        "concurrent_builds": 3,
+        "team_members": 3
+      },
+      "features": [
+        "Everything in Free",
+        "Email support",
+        "Background functions",
+        "Password protection",
+        "Slack notifications"
+      ]
+    },
+    {
+      "name": "Pro",
+      "basePrice": 99,
+      "limits": {
+        "bandwidth": 400,
+        "builds": 1000,
+        "functions": 125000,
+        "concurrent_builds": 5,
+        "team_members": -1
+      },
+      "features": [
+        "Everything in Starter",
+        "Analytics",
+        "Role-based access",
+        "Audit log",
+        "SLA"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "bandwidth",
+      "unit": "100GB",
+      "price": 20,
+      "freeQuota": 100,
+      "description": "Data transfer"
+    },
+    {
+      "name": "builds",
+      "unit": "500 minutes",
+      "price": 7,
+      "freeQuota": 300,
+      "description": "Build minutes"
+    },
+    {
+      "name": "functions",
+      "unit": "2M invocations",
+      "price": 25,
+      "freeQuota": 125000,
+      "description": "Serverless function invocations"
+    },
+    {
+      "name": "forms",
+      "unit": "100 submissions",
+      "price": 19,
+      "freeQuota": 100,
+      "description": "Form submissions"
+    },
+    {
+      "name": "identity",
+      "unit": "1000 users",
+      "price": 99,
+      "freeQuota": 5,
+      "description": "Identity users"
+    },
+    {
+      "name": "large-media",
+      "unit": "100GB",
+      "price": 25,
+      "freeQuota": 0,
+      "description": "Large Media storage"
+    }
+  ]
+}

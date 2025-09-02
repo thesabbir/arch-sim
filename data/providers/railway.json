@@ -1,0 +1,126 @@
+{
+  "provider": "railway",
+  "lastUpdated": "2025-01-15T00:00:00Z",
+  "currency": "USD",
+  "billingPeriod": "monthly",
+  "tiers": [
+    {
+      "name": "Trial",
+      "basePrice": 0,
+      "limits": {
+        "credit": 5,
+        "egress": 100,
+        "execution_hours": 500
+      },
+      "features": [
+        "$5 one-time credit",
+        "Limited resources",
+        "Community support"
+      ]
+    },
+    {
+      "name": "Hobby",
+      "basePrice": 5,
+      "limits": {
+        "egress": 100,
+        "execution_hours": -1,
+        "services": 100
+      },
+      "features": [
+        "Unlimited execution",
+        "100GB egress included",
+        "Custom domains",
+        "Private networking"
+      ]
+    },
+    {
+      "name": "Pro",
+      "basePrice": 20,
+      "limits": {
+        "egress": 250,
+        "execution_hours": -1,
+        "services": -1,
+        "team_members": -1
+      },
+      "features": [
+        "Everything in Hobby",
+        "Priority support",
+        "Team collaboration",
+        "Compliance features",
+        "Volume discounts"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "vcpu",
+      "unit": "vCPU-hour",
+      "price": 0.000463,
+      "freeQuota": 0,
+      "description": "CPU compute time"
+    },
+    {
+      "name": "memory",
+      "unit": "GB-hour",
+      "price": 0.000463,
+      "freeQuota": 0,
+      "description": "Memory usage"
+    },
+    {
+      "name": "egress",
+      "unit": "GB",
+      "price": 0.10,
+      "freeQuota": 100,
+      "description": "Outbound data transfer"
+    },
+    {
+      "name": "volume-storage",
+      "unit": "GB-month",
+      "price": 0.25,
+      "freeQuota": 0,
+      "description": "Persistent volume storage"
+    },
+    {
+      "name": "database-storage",
+      "unit": "GB-month",
+      "price": 0.25,
+      "freeQuota": 0,
+      "description": "Database storage"
+    },
+    {
+      "name": "builds",
+      "unit": "minute",
+      "price": 0.01,
+      "freeQuota": 0,
+      "description": "Build minutes"
+    }
+  ],
+  "configurations": {
+    "instances": [
+      {
+        "name": "starter",
+        "vcpu": 0.5,
+        "memory": 0.5,
+        "monthlyEstimate": 5.50
+      },
+      {
+        "name": "basic",
+        "vcpu": 1,
+        "memory": 1,
+        "monthlyEstimate": 10.00
+      },
+      {
+        "name": "standard",
+        "vcpu": 2,
+        "memory": 2,
+        "monthlyEstimate": 20.00
+      },
+      {
+        "name": "performance",
+        "vcpu": 4,
+        "memory": 4,
+        "monthlyEstimate": 40.00
+      }
+    ]
+  }
+}

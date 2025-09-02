@@ -1,0 +1,48 @@
+{
+  "provider": "planetscale",
+  "lastUpdated": "2025-01-15T00:00:00Z",
+  "currency": "USD",
+  "billingPeriod": "monthly",
+  "tiers": [
+    {
+      "name": "Hobby",
+      "basePrice": 0,
+      "limits": {
+        "storage": 5,
+        "reads": 1000000000,
+        "writes": 10000000
+      },
+      "features": ["1 production branch", "1 development branch"]
+    },
+    {
+      "name": "Scaler",
+      "basePrice": 29,
+      "limits": {
+        "storage": 10,
+        "reads": 100000000000,
+        "writes": 50000000
+      },
+      "features": ["Unlimited branches", "Point-in-time recovery"]
+    }
+  ],
+  "services": [
+    {
+      "name": "storage",
+      "unit": "GB-month",
+      "price": 1.5,
+      "freeQuota": 10
+    },
+    {
+      "name": "reads",
+      "unit": "million",
+      "price": 0.001,
+      "freeQuota": 1000
+    },
+    {
+      "name": "writes",
+      "unit": "million",
+      "price": 0.001,
+      "freeQuota": 10
+    }
+  ]
+}

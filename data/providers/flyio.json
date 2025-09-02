@@ -1,0 +1,80 @@
+{
+  "provider": "flyio",
+  "lastUpdated": "2025-01-15T00:00:00Z",
+  "currency": "USD",
+  "billingPeriod": "monthly",
+  "tiers": [
+    {
+      "name": "Pay-As-You-Go",
+      "basePrice": 0,
+      "limits": {
+        "bandwidth": 100,
+        "machines": 100
+      },
+      "features": [
+        "Scale to zero",
+        "Multi-region deployment",
+        "Anycast IPs",
+        "Private networking"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "shared-cpu-1x",
+      "unit": "hour",
+      "price": 0.00288,
+      "freeQuota": 0,
+      "description": "Shared CPU with 256MB RAM"
+    },
+    {
+      "name": "shared-cpu-2x",
+      "unit": "hour", 
+      "price": 0.00576,
+      "freeQuota": 0,
+      "description": "Shared CPU with 512MB RAM"
+    },
+    {
+      "name": "shared-cpu-4x",
+      "unit": "hour",
+      "price": 0.01152,
+      "freeQuota": 0,
+      "description": "Shared CPU with 1GB RAM"
+    },
+    {
+      "name": "dedicated-cpu-1x",
+      "unit": "hour",
+      "price": 0.0624,
+      "freeQuota": 0,
+      "description": "1 dedicated CPU with 2GB RAM"
+    },
+    {
+      "name": "bandwidth",
+      "unit": "GB",
+      "price": 0.02,
+      "freeQuota": 100,
+      "description": "Outbound data transfer"
+    },
+    {
+      "name": "volume-storage",
+      "unit": "GB-month",
+      "price": 0.15,
+      "freeQuota": 0,
+      "description": "Persistent SSD storage"
+    },
+    {
+      "name": "ipv4",
+      "unit": "month",
+      "price": 2,
+      "freeQuota": 0,
+      "description": "Dedicated IPv4 address"
+    },
+    {
+      "name": "ipv6",
+      "unit": "month",
+      "price": 0,
+      "freeQuota": -1,
+      "description": "IPv6 address (free)"
+    }
+  ]
+}
