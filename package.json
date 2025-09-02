@@ -4,7 +4,7 @@
   "description": "Advanced web architecture modeling and simulation tool with granular cost analysis",
   "main": "src/cli/index.js",
   "type": "module",
-  "packageManager": "pnpm@10",
+  "packageManager": "pnpm@10.15.1",
   "engines": {
     "node": ">=20.0.0"
   },
